@@ -50,6 +50,22 @@ header{
 	
 }
 
+.hotel_derecha{
+	
+	padding: 0 0 0 12px;
+	width: 450px;
+	float: right;
+	
+}
+
+.hotel_izquierda{
+	
+	padding: 0 0 0 12px;
+	float: left;
+	width: 450px;
+	
+}
+
 .logo{
 	
 	padding-right: 12px;
@@ -61,6 +77,7 @@ header{
 
 .marco{
 	
+	height: 1000px;
 	width: 1000px;
 	margin: 0 auto;
 	border: 1px solid black;
@@ -85,10 +102,24 @@ header{
 	
 }
 
+#foto_hotel{
+	
+	float: right;
+	width: 180px;
+	height: 180px;
+	
+}
+
 #logo{
 	
 	padding: 7px 0 0 0;
 	width: 100px;
 	height: 100px;
+	
+}
+
+#nombre_hotel{
+	
+	float: left;
 	
 }
