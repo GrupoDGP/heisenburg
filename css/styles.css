@@ -1,11 +1,19 @@
 /* Estructura del css:
-	1.- Clases
-	2.- IDS
+	1.- Fonts
+	2.- Clases
+	3.- IDS
 Ordenar alfabéticamente.
 Nombres en español.
 Todas las medidas de márgenes en px;
 
 */
+
+@font-face {
+
+    font-family: plane; 
+    src: url(../fonts/HEADPLANE.ttf); 
+   
+}
 
 .background{
 	
@@ -26,6 +34,12 @@ footer{
 	background-color: #000000;
 	padding: 12px;
 	border-top: 1px solid black;
+	
+}
+
+h1{
+	
+	font-family: plane;
 	
 }
 
