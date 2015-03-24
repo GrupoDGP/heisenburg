@@ -26,6 +26,7 @@ body{
 .busqueda{
 	
 	padding-left: 15px;
+	padding-top:115px;
 
 }
 
@@ -91,7 +92,7 @@ header{
 
 .sesion{
 	
-	padding: 0 12px 0 0;
+	padding: 10px 12px 0 0;
 	float: right;
 
 }
