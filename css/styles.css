@@ -1,19 +1,80 @@
+/* Estructura del css:
+	1.- Clases
+	2.- IDS
+Ordenar alfabéticamente.
+Nombres en español.
+Todas las medidas de márgenes en px;
 
+*/
 
 .background{
 	
 	margin: 0 auto;
-	width: 1020px;
-	background-color: #20A88D;
+	background-image: url(../img/b-marco.jpg);
+	
+}
+
+.busqueda{
+	
+	padding-left: 15px;
+
+}
+
+footer{
+	
+	color: #FFFFFF;
+	background-color: #000000;
+	padding: 12px;
+	border-top: 1px solid black;
+	
+}
+
+header{
+	
+	height: 152px;
+	background-image: url(../img/b-header.jpg);
+	
+}
+
+.logo{
+	
+	padding-right: 12px;
+	width: 100px;
+	height: 100px;
+	float: right;
 	
 }
 
 .marco{
 	
-	width: 960px;
-	padding: 12px;
+	width: 1000px;
 	margin: 0 auto;
 	border: 1px solid black;
-	background-color:#C02225;
+	background-color: #828080;
+	
+}
+
+.sesion{
+	
+	padding: 0 12px 0 0;
+	float: right;
+
+}
+
+.titulo{
+	
+	width: 860px;
+	heigth: 120px;
+	text-align:center;
+	float: left;
+	font-size:22px;
+	
+}
+
+#logo{
+	
+	padding: 7px 0 0 0;
+	width: 100px;
+	height: 100px;
 	
 }
