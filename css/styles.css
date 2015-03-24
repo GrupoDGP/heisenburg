@@ -30,9 +30,11 @@ Todas las medidas de márgenes en px;
 
 footer{
 	
+	width:1000px;
+	margin: 0 auto;
 	color: #FFFFFF;
-	background-color: #000000;
-	padding: 12px;
+	background-color:#BB3941;
+	padding: 4px 0 0 0;
 	border-top: 1px solid black;
 	
 }
