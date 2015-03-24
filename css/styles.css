@@ -31,37 +31,12 @@ body{
 }
 
 footer{
-	width:1000px;
+	width:1002px;
 	margin: 0 auto;
 	color: #FFFFFF;
-	background-color:#018923;
-	padding: 4px 0 0 0;
-	border-top: 1px solid black;
+	background-color:#000000;
 	
 }
-
-#footer_Superior_Izquierdo{
-	width:500px;
-	height: 100px;
-	float:left;
- 	text-align:center;
-}
-
-#footer_Superior_Derecho{
-	width:500px;	
-	height: 100px;
-	float:right;
-}
-
-#footer_Inferior{
-	width:1000px;
-	height: 30px;
-	padding-top:100px;
-	text-align:center;
-}
-
-
-
 
 h1{
 	
@@ -79,16 +54,18 @@ header{
 .hotel_derecha{
 	
 	padding: 0 0 0 12px;
-	width: 450px;
+	border: 1px solid black;
+	width: 480px;
 	float: right;
 	
 }
 
 .hotel_izquierda{
 	
+	border: 1px solid black;
 	padding: 0 0 0 12px;
 	float: left;
-	width: 450px;
+	width: 480px;
 	
 }
 
@@ -107,7 +84,7 @@ header{
 	width: 1000px;
 	margin: 0 auto;
 	border: 1px solid black;
-	background-color: #828080;
+	background-color: #C9C3C3;
 	overflow: hidden;
 	
 }
@@ -129,11 +106,35 @@ header{
 	
 }
 
+#footer_Superior_Izquierdo{
+	
+	padding: 5px 0 0 15px;
+	width:480px;
+	height: 100px;
+	float:left;
+}
+
+#footer_Superior_Derecho{
+	width:500px;	
+	height: 100px;
+	float:right;
+}
+
+#footer_Inferior{
+	width:1000px;
+	height: 30px;
+	padding-top:120px;
+	padding-bottom: 15px;
+	text-align:center;
+}
+
 #foto_hotel{
 	
 	float: right;
 	width: 180px;
 	height: 180px;
+	padding-bottom: 10px;
+	padding-right: 3px;
 	
 }
 
@@ -147,6 +148,7 @@ header{
 
 #nombre_hotel{
 	
+	width: 278px;
 	float: left;
 	
 }
