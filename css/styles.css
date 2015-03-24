@@ -31,15 +31,37 @@ body{
 }
 
 footer{
-	
 	width:1000px;
 	margin: 0 auto;
 	color: #FFFFFF;
-	background-color:#BB3941;
+	background-color:#018923;
 	padding: 4px 0 0 0;
 	border-top: 1px solid black;
 	
 }
+
+#footer_Superior_Izquierdo{
+	width:500px;
+	height: 100px;
+	float:left;
+ 	text-align:center;
+}
+
+#footer_Superior_Derecho{
+	width:500px;	
+	height: 100px;
+	float:right;
+}
+
+#footer_Inferior{
+	width:1000px;
+	height: 30px;
+	padding-top:100px;
+	text-align:center;
+}
+
+
+
 
 h1{
 	
