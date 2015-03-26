@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>HeisenBurg</title>
 <link href="css/styles.css" rel="stylesheet" type = "text/css"/>
-<link rel="icon" type="image/png" href="../img/logoheisen.png">
+<link rel="icon" type="image/png" href="./img/logoheisen.png">
 </head>
 <body>
     <div class = "marco">
@@ -18,34 +18,34 @@
             </div> <!-- end logo -->
                         
             <div class = "sesion">
-                <form>
-                <input type = "text" size ="15" placeholder="Usuario">
-                <input type="password" size ="15" placeholder="Contraseña">
-                <input type="submit" value="Enviar">
+                <form class = "barra_sesion">
+                    <input type = "text" id="texto" size ="13" placeholder="Usuario" required>
+                    <input type="password" id="texto" size ="13" placeholder="Contraseña" required>
+                    <input type="submit" id="submit" value="Enviar">
                 </form>
             </div> <!-- end sesion -->
             
             <div class = "busqueda">
-                <form>
-                    <input type="text" size ="20" placeholder="Buscar..." required>
-                    <input type="text" size ="15" placeholder="Precio">
-                    <input type="text" size ="15" placeholder="Fecha">
-                    <select name="tipo">
+                <form class = "barra_sesion">
+                    <input type="text" id="texto" size ="20" placeholder="Buscar..." required>
+                    <input type="text" id="texto" size ="13" placeholder="Precio">
+                    <input type="text" id="texto" size ="13" placeholder="Fecha">
+                    <select name="tipo" id="desplegable">
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
-                    <input type="button" value="Buscar">
+                    <input type="submit" id="submit" value="Buscar">
                 </form>
             </div> <!-- end busqueda -->   
         </header>
         
         <section>
             <div class = "hotel_izquierda">
-                <h1 id="nombre_hotel"> HOTEL NAZARIES <br>
+                <h2 id="nombre_hotel"> HOTEL NAZARIES <br>
                 Precio 
-                </h1><br>
+                </h2><br>
                 	
                 <div id ="foto_hotel">
                 	<img id="foto_hotel" src = "img/hoteles/nazaries.jpg"/>
@@ -54,36 +54,36 @@
             </div>
                     
                 <div class = "hotel_derecha">
-                    <h1 id="nombre_hotel"> Este es el hotel 2  <br>
-                    Precio </h1><br>
+                    <h2 id="nombre_hotel"> Este es el hotel 2  <br>
+                    Precio </h2><br>
                     <div id ="foto_hotel"> foto </div> 
                     <div> Descripcion del hotel</div>
                 </div>
                 
                 <div class = "hotel_izquierda">
-                    <h1 id="nombre_hotel"> Este es el hotel 3  <br>
-                    Precio </h1><br>
+                    <h2 id="nombre_hotel"> Este es el hotel 3  <br>
+                    Precio </h2><br>
                     <div id ="foto_hotel"> foto </div> 
                     <div> Descripcion del hotel</div>
                 </div>
                     
                 <div class = "hotel_derecha">
-                    <h1 id="nombre_hotel"> Este es el hotel 4  <br>
-                    Precio </h1><br>
+                    <h2 id="nombre_hotel"> Este es el hotel 4  <br>
+                    Precio </h2><br>
                     <div id ="foto_hotel"> foto </div> 
                     <div> Descripcion del hotel</div>
                 </div>
                 
                 <div class = "hotel_izquierda">
-                    <h1 id="nombre_hotel"> Este es el hotel 5  <br>
-                    Precio </h1><br>
+                    <h2 id="nombre_hotel"> Este es el hotel 5  <br>
+                    Precio </h2><br>
                     <div id ="foto_hotel"> foto </div> 
                     <div> Descripcion del hotel</div>
                 </div>
                     
                 <div class = "hotel_derecha">
-                    <h1 id="nombre_hotel"> Este es el hotel 6  <br>
-                    Precio </h1><br>
+                    <h2 id="nombre_hotel"> Este es el hotel 6  <br>
+                    Precio </h2><br>
                     <div id ="foto_hotel"> foto </div> 
                     <div> Descripcion del hotel</div>
                 </div>
@@ -95,10 +95,11 @@
 		</div> <!-- end marco -->
         	<footer>
                 <div>
-                	<div id="footer_Superior_Izquierdo"><img src="./img/logo_etsiit.png"/>
+                	<div id="footer_Superior_Derecho">
+                    	<img src="./img/logo_etsiit.png"/>
                     </div>
                     
-                    <div id="footer_Superior_Derecho"> 
+                    <div id="footer_Superior_Izquierdo"> 
                     	<p>Dirección:Calle Periodista Daniel Saucedo Aranda s/n </p> 
 						<p>Teléfono: +34-958242802</p>
 						<p>Email: informacion@heisenburg.es </p>
