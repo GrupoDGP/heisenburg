@@ -10,20 +10,20 @@ Todas las medidas de márgenes en px;
 
 @font-face {
 
-    font-family: plane; 
-    src: url(../fonts/HEADPLANE.ttf); 
-   
+    font-family: plane;
+    src: url(../fonts/HEADPLANE.ttf);
+
 }
 
 @font-face {
 
-    font-family: familiar; 
-    src: url(../fonts/familiar.ttf); 
-   
+    font-family: familiar;
+    src: url(../fonts/familiar.ttf);
+
 }
 
 .barra_sesion{
-	
+
     padding: 8px;
 	margin: 20px auto;
     overflow: hidden;
@@ -31,26 +31,26 @@ Todas las medidas de márgenes en px;
     border-style: solid;
     border-color: #dedede #bababa #aaa #bababa;
     box-shadow: 0 1px 1px rgba(255,255,255,.1), 0 1px 0 #bbb, 0 1px 0 #aaa, 0 1px 1px #444;
-    border-radius: 10px;    
+    border-radius: 10px;
     background-color: #f6f6f6;
-   		
+
 }
 
-.barra_sesion #texto {  
+.barra_sesion #texto {
     height: 20px;
 	text-align:center;
     float: left;
     font: 16px plane;
     border: 1px solid #ccc;
     box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
-    border-radius: 3px;      
+    border-radius: 3px;
 }
 
 .barra_sesion #texto:focus {
 	/* Para cuando se mete el cursor->gradiente */
-    outline: 0; 
+    outline: 0;
     border-color: #aaa;
-    box-shadow: 0 1px 1px #bbb inset;  
+    box-shadow: 0 1px 1px #bbb inset;
 }
 
 input:focus::-webkit-input-placeholder{
@@ -60,58 +60,58 @@ input:focus::-webkit-input-placeholder{
 }
 
 .barra_sesion #desplegable{
-	/* Menu desplegable*/ 
+	/* Menu desplegable*/
 	height: 24px;
 	font: 16px plane;
 	text-align:center;
 	border: 1px solid #ccc;
     box-shadow: 0 1px 1px #ddd inset, 0 1px 0 #fff;
-    border-radius: 3px; 
+    border-radius: 3px;
 }
 
 .barra_sesion #desplegable:hover, .barra_sesion #desplegable:focus{
 	/* Cliky desplegable*/
-	outline: 0;    
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset; 
-		
+	outline: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
+
 }
 
 .barra_sesion #submit {
 	/* Boton */
-    float: right;    
+    float: right;
     border: 1px solid #00748f;
 	height: 24px;
 	margin-left: 1px;
     cursor: pointer;
     font: 15px plane;
-    color: #fafafa;    
+    color: #fafafa;
     background-color: #0483a0;
     background-image: linear-gradient(top, #31b2c3, #0483a0);
-    border-radius: 3px;      
+    border-radius: 3px;
 }
 
 .barra_sesion #submit:hover, .barra_sesion #submit:focus {
-	/* Click */   
+	/* Click */
     background-color: #31b2c3;
     background-image: linear-gradient(top, #0483a0, #31b2c3);
-}   
-  
+}
+
 .barra_sesion #submit:active {
 	/* Gradiente cuando click */
-    outline: 0;    
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;    
+    outline: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;
 }
 
 body{
-	
+
 	background: url(../img/b-marco.jpg) top left no-repeat;
 	background-attachment:fixed;
 	background-size: cover;
-	
+
 }
 
 .busqueda{
-	
+
 	z-index: 1000;
 	position:absolute;
 	padding-left: 12px;
@@ -124,61 +124,61 @@ footer{
 	margin: 0 auto;
 	color: #FFFFFF;
 	background-color:#000000;
-	
+
 }
 
 h2{
-	
+
 	font-family: plane;
-	
+
 }
 
 header{
-	
+
 	height: 190px;
 	background-image: url(../img/b-header.jpg);
-	
+
 }
 
 .hotel_derecha{
-	
+
 	padding: 0 0 0 12px;
 	border: 1px solid black;
 	width: 480px;
 	float: right;
-	
+
 }
 
 .hotel_izquierda{
-	
+
 	border: 1px solid black;
 	padding: 0 0 0 12px;
 	float: left;
 	width: 490px;
-	
+
 }
 
 .logo{
-	
+
 	padding-right: 12px;
 	width: 100px;
 	height: 100px;
 	float: right;
-	
+
 }
 
 .marco{
-	
+
 	width: 1000px;
 	margin: 0 auto;
 	border: 1px solid black;
 	background-color: #C9C3C3;
 	overflow: hidden;
-	
+
 }
 
 .sesion{
-	
+
 	position:absolute;
 	padding: 100px 12px 0 635px;
 
@@ -193,11 +193,11 @@ header{
 	text-align:center;
 	float: left;
 	font-size:22px;
-	
+
 }
 
 #footer_Superior_Izquierdo{
-	
+
 	padding: 5px 0 0 15px;
 	width:480px;
 	height: 100px;
@@ -205,9 +205,9 @@ header{
 }
 
 #footer_Superior_Derecho{
-	
+
 	padding: 20px 0 0 0;
-	width: 400px;	
+	width: 400px;
 	height: 100px;
 	float:right;
 }
@@ -221,30 +221,30 @@ header{
 }
 
 #foto_hotel{
-	
+
 	float: right;
 	width: 180px;
 	height: 180px;
 	padding-bottom: 10px;
 	padding-right: 3px;
-	
+
 }
 
 #logo{
-	
+
 	z-index: 1000;
 	position: absolute;
 	padding: 7px 0 0 0;
 	width: 100px;
 	height: 100px;
-	
+
 }
 
 #nombre_hotel{
-	
+
 	width: 278px;
 	float: left;
-	
+
 }
 
 #TEST {
@@ -265,4 +265,38 @@ header{
 	height:400px;
 	border:5px solid #000;
 	z-index: 9002;
+}
+
+
+/*clases info*/
+
+.foto_hotel2{
+
+	float: left;
+	width: 230px;
+	height: 230px;
+  padding: 10px 30px 10px 10px;
+}
+
+.info_especifica{
+  float: left;
+  height: 250px;
+  width: 555px;
+}
+
+.precio{
+  font-family: plane;
+  font-size: 20px;
+  color: #0B0D7C;
+}
+.valorar{
+  float: left;
+    height: 250px;
+    width: 160px;
+
+}
+
+.info_general{
+  padding: 10px 30px 10px 10px;
+  font-family: plane;
 }
