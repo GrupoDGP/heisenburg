@@ -41,17 +41,16 @@
                 </form>
             </div> <!-- end busqueda -->
         </header>
-
         <section>
             <div class = "hotel_izquierda">
                 <h2 id="nombre_hotel"> HOTEL NAZARIES <br>
                 Precio: 76.50 €
                 </h2><br>
-
+				
                 <div id ="foto_hotel">
-                	<div id="TEST" style="display:none"></div>
-                    <a href="#" onclick="popup('TESTpopUp')" ><img id="foto_hotel" src = "img/hoteles/nazaries.jpg"/></a>
-        			<div id="TESTpopUp" onclick="popup('TESTpopUp')" style="display:none"></div>
+                	<div id="TEST" onclick="closepopup('TESTpopUp')" style="display:none"></div>
+                    <a href="#" onClick="popup('TESTpopUp',400,400)" ><img id="foto_hotel" src = "img/hoteles/nazaries.jpg"/></a>
+        			<div id="TESTpopUp" onclick="closepopup('TESTpopUp')" style="display:block"></div>
 				</div>
 				<div> <p>Nazaríes Business & Spa se encuentra a pocos metros de la calle Recogidas 
 						y a 500 metros del Palacio de Congresos. Cuenta con un spa y habitaciones con TV de pantalla plana...</p>
@@ -63,11 +62,6 @@
                 Precio: 71.10 €
                 </h2><br>
 
-                <div id ="foto_hotel">
-                	<div id="TEST" style="display:none"></div>
-                    <a href="#" onclick="popup('TESTpopUp')" ><img id="foto_hotel" src = "img/hoteles/saray.jpg"/></a>
-        			<div id="TESTpopUp" onclick="popup('TESTpopUp')" style="display:none"></div>
-				</div>
 				<div> <p>Hotel Saray se encuentra a menos de 10 minutos a pie del centro histórico de Granada y 
 					cuenta con una piscina al aire libre de temporada con terrazas y jardines con encanto...</p>
 				</div>

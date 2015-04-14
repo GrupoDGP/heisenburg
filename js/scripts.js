@@ -7,7 +7,8 @@ function toggle( div_id ) {
 	else 
 		el.style.display = 'none';
 }
-function TEST_size( TESTpopUpVar ) {
+
+function TEST_size( TESTpopUpVar ,width,height) {
 	if ( typeof window.innerWidth != 'undefined' )
 		viewportheight = window.innerHeight;
 	else
@@ -24,10 +25,13 @@ function TEST_size( TESTpopUpVar ) {
 	var TEST = document.getElementById( 'TEST' );
 	TEST.style.height = TEST_height + 'px';
 	var TESTpopUp = document.getElementById( TESTpopUpVar );
-	TESTpopUp_height=TEST_height/2-200;
+	TESTpopUp_height=TEST_height/2-(height/2)-100;
 	TESTpopUp.style.top = TESTpopUp_height + 'px';
+	
+	TESTpopUp.style.width=width + 'px';
+	TESTpopUp.style.height=height + 'px';
 }
-function window_pos(TESTpopUpVar) {
+function window_pos(TESTpopUpVar,width,height) {
 	if ( typeof window.innerWidth != 'undefined' )
 		viewportwidth = window.innerHeight;
 	else
@@ -42,12 +46,22 @@ function window_pos(TESTpopUpVar) {
 			window_width = document.body.parentNode.scrollWidth;
 		
 	var TESTpopUp = document.getElementById(TESTpopUpVar);
-	window_width=window_width/2-200;
+	window_width=window_width/2-(width/2);
 	TESTpopUp.style.left = window_width + 'px';
 }
-function popup( windowname ) {
-	TEST_size( windowname );
-	window_pos( windowname );
-	toggle( 'TEST' );
-	toggle( windowname );		
+function popup( windowname,width,height ) {
+	TEST_size( windowname,width,height );
+	window_pos( windowname,width,height );
+	//toggle( 'TEST' );
+	var el = document.getElementById(windowname);
+	el.style.zIndex = 9002;
+	var el2 = document.getElementById('TEST');
+	el2.style.display = 'block';
+	//toggle( windowname );		
+}
+function closepopup(windowsname){
+	var el = document.getElementById(windowsname); 
+		el.style.zIndex = -1000;
+		var el2 = document.getElementById('TEST'); 
+		el2.style.display = 'none';
 }

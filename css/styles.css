@@ -103,7 +103,7 @@ input:focus::-webkit-input-placeholder{
 }
 
 body{
-
+	
 	background: url(../img/b-marco.jpg) top left no-repeat;
 	background-attachment:fixed;
 	background-size: cover;
@@ -265,9 +265,17 @@ header{
 	width:400px;
 	height:400px;
 	border:5px solid #000;
-	z-index: 9002;
+	z-index: -1000;
 }
 
+#MAPpopUp {
+	position:absolute;
+	background:url(../img/b-marco.jpg) no-repeat;
+	width:600px;
+	height:450px;
+	border:5px solid #000;
+	z-index: -1000;
+}
 
 /*clases info*/
 
