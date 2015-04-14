@@ -5,6 +5,7 @@
 <title>HeisenBurg</title>
 <link href="css/styles.css" rel="stylesheet" type = "text/css"/>
 <link rel="icon" type="image/png" href="./img/logoheisen.png">
+<script type="text/javascript" src="js/scripts.js"></script>
 </head>
 <body>
     <div class = "marco">
@@ -40,7 +41,7 @@
                 </form>
             </div> <!-- end busqueda -->   
         </header>
-        
+         
         <section>
             <div class = "hotel_izquierda">
                 <h2 id="nombre_hotel"> HOTEL NAZARIES <br>
@@ -48,7 +49,14 @@
                 </h2><br>
                 	
                 <div id ="foto_hotel">
-                	<img id="foto_hotel" src = "img/hoteles/nazaries.jpg"/>
+                	<div id="TEST" style="display:none"></div>
+                    <a href="#" onclick="popup('TESTpopUp')" ><img id="foto_hotel" src = "img/hoteles/nazaries.jpg"/></a>
+        			<div id="TESTpopUp" onclick="popup('TESTpopUp')" style="display:none">
+                		
+                    </div>
+                    
+                    
+                    
                 </div> 
                 <div> Descripcion del hotel</div>
             </div>
