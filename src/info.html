@@ -67,7 +67,22 @@
 
           <div class ="valorar">
             <h3   > Valorar</h3>
-            <p> poner un menu para elegir una nota </p>
+			
+			<ul class="listaValores">
+				<li>
+					<a href="#" > <img id="valoracion1" src="../img/valorar/muybien.png" height="25px" width="25px" alt="valoracionMuyBuena"> </a>
+				</li>
+				<li>
+					 <a href="#" > <img id="valoracion2" src="../img/valorar/bien.png" height="25px" width="25px" alt="valoracionBuena"> </a>
+				</li>
+				<li>
+					 <a href="#" > <img id="valoracion3" src="../img/valorar/regular.png" height="25px" width="25px" alt="valoracionRegular"> </a>
+				</li>
+				<li>
+					 <a href="#" > <img id="valoracion4" src="../img/valorar/mal.png" height="25px" width="25px" alt="valoracionMala"> </a>
+				</li>
+			</ul>
+			
           </div> <!-- end valorar -->
 
 
@@ -86,6 +101,20 @@
             <div class ="servicios">
               <h5 > Servios</h5>
 
+				<ul class="iconos-servicios ">
+					<li><img src="http://cdrst.com/adjuntos/filtros/parking.png" height="30px" width="30px" alt="Parking" title="Parking"> 
+						<img src="http://cdrst.com/adjuntos/filtros/wifi.png" height="30px" width="30px" alt="Wifi" title="Wifi"></li>
+					<li><img src="http://cdrst.com/adjuntos/filtros/mascotas.png" height="30px" width="30px" alt="Se admiten mascotas" title="Se admiten mascotas"> 
+						<img src="http://cdrst.com/adjuntos/filtros/piscina-cubierta.png" height="30px" width="30px" alt="Piscina climatizada o cubierta" title="Piscina climatizada o cubierta"></li>
+					<li><img src="http://cdrst.com/adjuntos/filtros/tv.png" height="30px" width="30px" alt="Televisión" title="Televisión"> 
+						<img src="http://cdrst.com/adjuntos/filtros/aire-acondicionado.png" height="30px" width="30px" alt="Aire acondicionado" title="Aire acondicionado"></li>
+					<li><img src="http://cdrst.com/adjuntos/filtros/internet.png" height="30px" width="30px" alt="Internet" title="Internet">
+						<img src="http://cdrst.com/adjuntos/filtros/restaurante.png" height="30px" width="30px" alt="Restaurante" title="Restaurante"></li>
+					<li><img src="http://cdrst.com/adjuntos/filtros/habitaciones-no-fumadores.png" height="30px" width="30px" alt="Habitaciones libres de humos" title="Habitaciones libres de humos">
+						<img src="http://cdrst.com/adjuntos/filtros/accesibilidad-discapacitados.png" height="30px" width="30px" alt="Habitaciones adaptadas" title="Habitaciones adaptadas"></li>
+				</ul>
+				
+
             </div> <!-- end servicios-->
          </div> <!-- end info_generañ -->
 
@@ -97,7 +126,30 @@
 
         <div class ="comenta">
           <h4>Coemtenta</h4>
-          <p>aqui aparece un formulario para rellenaru n comentariario</p>
+          <div class="comentaBueno">
+			<form method="post" action="http://hello-canvas.es/index.php?viaje=contacto" onsubmit="return validation(this);"> 
+				<table id="tablaformulario">
+					<tr>
+						<td><textarea type="textarea" name="mensaje" id="mensaje" placeholder="Introduce mensaje." rows="8" cols="45" ></textarea>  </td>
+					</tr>
+				</table> 
+			</form>
+		  </div> <!-- end comentaBueno-->
+		  
+		  <div class="comentaEnviar">
+			<a href="#" > <img id="enviarComentario" src="../img/imgComentario.png" height="100px" width="120px" alt="ImagenComentario"> </a>
+		  </div>
+		  
+          <div class="comentaMalo">
+			<form method="post" action="http://hello-canvas.es/index.php?viaje=contacto" onsubmit="return validation(this);"> 
+				<table id="tablaformulario">
+					<tr>
+						<td><textarea type="textarea" name="mensaje" id="mensaje" placeholder="Introduce mensaje." rows="8" cols="45" ></textarea>  </td>
+					</tr>
+				</table> 
+			</form>
+		  </div> <!-- end comentaMalo -->
+
        </div> <!-- end comentarios -->
 
 
