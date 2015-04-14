@@ -300,3 +300,24 @@ header{
   padding: 10px 30px 10px 10px;
   font-family: plane;
 }
+
+.resumen{
+  padding: 0px 10px 0px 10px;
+  float: left;
+  height: 250px;
+  width:440px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #3795AB;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.servicios{
+  padding: 0px 10px 0px 10px;
+  float: left;
+  height: 250px;
+  width:440px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #3795AB;
+}
