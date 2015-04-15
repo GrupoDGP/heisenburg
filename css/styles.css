@@ -299,9 +299,13 @@ header{
   color: #0B0D7C;
 }
 .valorar{
-  float: left;
-    height: 250px;
+
+  	float: left;
+	margin-top:10px;
+	margin-right: 10px;
+    height: 150px;
     width: 160px;
+	text-align:center;
 
 }
 
@@ -311,7 +315,14 @@ header{
 }
 
 .listaValores{
-	list-style:none;
+	list-style:none;	
+	padding: 0 0 0 0;	
+}
+
+.listaValores li{
+
+	display: inline;
+	
 }
 
 .iconos-servicios{
@@ -374,4 +385,21 @@ header{
 	height : 180px;
 	width : 400px;
 	padding: 0px 10px 0px 10px;
+}
+
+.boton_atras{
+	float:right;
+	border: 1px solid #00748f;
+	height: 25px;
+	width: 133px;
+	margin-top: 30px;
+	margin-right: 20px;
+    cursor: pointer;
+    font: 20px plane;
+    color: #fafafa;
+    background-color: #0483a0;
+    background-image: linear-gradient(top, #31b2c3, #0483a0);
+    border-radius: 3px;
+	text-align: center;
+	padding: 10px;
 }
