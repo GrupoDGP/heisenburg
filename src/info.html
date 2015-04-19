@@ -30,7 +30,7 @@
                 <form class = "barra_sesion">
                     <input type="text" id="texto" size ="20" placeholder="Buscar..." required>
                     <input type="text" id="texto" size ="13" placeholder="Precio">
-                    <input type="text" id="texto" size ="13" placeholder="Fecha">
+                    <input type="date" id="texto" size ="13" placeholder="Fecha">
                     <select name="tipo" id="desplegable">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -138,6 +138,7 @@
 
 
           <div class ="comenta">
+		  <div id="tituloComentarios"> <h2> Dejanos tu comentario.</h2> </div>
           <div class="comentaBueno">
 			<form method="post" action="http://hello-canvas.es/index.php?viaje=contacto" onsubmit="return validation(this);">
 				<table id="tablaformulario">
@@ -165,14 +166,25 @@
        </div> <!-- end comentarios -->
 
 
-
-       <!--
-
-	<div class ="comentarios">
-           <h4> Comentarios</h4>
-           <p>aqui aparece un conjunto de comentariarios </p>
-        </div>
-      -->
+		<div class ="comentarios">
+		   <div id="tituloComentarios"> <h2> Comentarios</h2> </div>
+		   
+		   <div class="comentario">
+				<p> <b>Nombre: </b>   Pijus Magnificus</p>
+				<p> <b>Valoración: </b>   <a href="#"> <img id="valoracion4" src="../img/valorar/mal.png" height="25px" width="25px" alt="valoracionMala" title="valoracionMala"> </a> </p>
+				<p> <b>Lo bueno: </b> Un hotel fantastico.... blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla 
+				blablabla blablabla blablabla blablabla blablabla</p>
+				<p> <b>Lo malo: </b> No me ha gustado el hotel, es una puta mierda, quiero que me devuelvan mi dinero, cabrones!!!</p>
+		   </div>		   
+		   <div class="comentario">
+				<p> <b>Nombre: </b>   Gregorio</p>
+				<p> <b>Valoración: </b>   <a href="#"> <img id="valoracion4" src="../img/valorar/muybien.png" height="25px" width="25px" alt="valoracionMala" title="valoracionMala"> </a> </p>
+				<p> <b>Lo bueno: </b> Un hotel fantastico.... blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla 
+				blablabla blablabla blablabla blablabla blablabla</p>
+				<p> <b>Lo malo: </b> No me ha gustado el hotel, es una puta mierda, quiero que me devuelvan mi dinero, cabrones!!!</p>
+		   </div>   
+		</div>
+      
   </section> <!-- end section (hoteles) -->
 
 		</div> <!-- end marco -->

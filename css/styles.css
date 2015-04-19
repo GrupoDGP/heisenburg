@@ -396,9 +396,9 @@ header{
 	margin-right : 10px;
 	background : #CDDBF0;
 	border-radius : 15px;
-	height : 155px;
-  width: 980px;
-  padding-top:22px;
+	height : 200px;
+	width: 980px;
+	padding : 5 0;
 }
 
 .comenta textarea {
@@ -425,4 +425,34 @@ header{
 	height : 180px;
 	width : 400px;
 	padding: 0px 10px 0px 10px;
+}
+
+.comentarios{
+	margin-left : 10px;
+	margin-right : 10px;
+	margin-top : 22px;
+	margin-bottom : 20px;
+	background : #CDDBF0;
+	border-radius : 15px;
+	height : 50%;
+	width: 980px;
+	padding : 5 0;
+}
+
+.comentarios textarea {
+    resize: none;
+}
+
+.comentario{
+	width : 80%;
+	margin-left : 90px;
+	border-radius : 10px;
+	background : #FFFFFF;
+	margin-bottom : 40px;
+	padding: 5px 5px 5px 5px;
+	padding-left: 15px;
+}
+
+#tituloComentarios{
+	text-align:center;
 }
