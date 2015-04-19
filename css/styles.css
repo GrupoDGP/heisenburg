@@ -294,6 +294,21 @@ header{
   padding: 10px 30px 10px 10px;
 }
 
+.slide{
+	width: 230px;
+	height: 200px;
+	float: left;
+}
+#slider{
+	width: 230px;
+	height: 200px;
+	overflow: hidden;
+	position: relative;
+	margin: 10px 0 0 0;
+	border: 2px solid #0B0D7C;
+
+}
+
 .info_especifica{
   float: left;
   height: 250px;

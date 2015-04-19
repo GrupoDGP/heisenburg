@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="../img/logoheisen.png">
 <script type="text/javascript" src="../js/scripts.js"></script>
 </head>
-<body>
+<body onload="rotar()">
     <div class = "marco">
         <header>
             <div class = "titulo">
@@ -44,14 +44,21 @@
 
         <section>
 
-
-
-
           <div class ="info_especifica_grupo">
 
           <div class ="foto_hotel2">
-            <img src = "../img/hoteles/nazaries.jpg" width="230px" height="200px" alt="Imagne hotel">
+            <div id="slider">
+                <div id="slidesContainer">
+                    <div class="slide"><img src="../img/hoteles/nazaries/nazaries1.jpg" width="230px" height="200px" alt="Imagen hotel" title="Imagen hotel"></div>
+                    <div class="slide"><img src="../img/hoteles/nazaries/nazaries2.jpg" width="230px" height="200px" alt="Imagen hotel" title="Imagen hotel"></div>
+                    <div class="slide"><img src="../img/hoteles/nazaries/nazaries3.jpg" width="230px" height="200px" alt="Imagen hotel" title="Imagen hotel"></div>
+                    <div class="slide"><img src="../img/hoteles/nazaries/nazaries4.jpg" width="230px" height="200px" alt="Imagen hotel" title="Imagen hotel"></div>
+
+                </div> <!-- /slidesContainer-->
+            </div> <!-- /slider -->
           </div> <!-- end foto_hotel -->
+
+
           <div class ="info_especifica">
             <h1 > HOTEL NAZARIES
               <img src="../img/star.png" height="20px" alt="estrella">
@@ -166,15 +173,7 @@
            <p>aqui aparece un conjunto de comentariarios </p>
         </div>
       -->
-
-
-
-
-
-
-
-
-            </section> <!-- end section (hoteles) -->
+  </section> <!-- end section (hoteles) -->
 
 		</div> <!-- end marco -->
         	<footer>
