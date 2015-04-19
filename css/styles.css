@@ -386,6 +386,10 @@ header{
   padding-top:22px;
 }
 
+.comenta textarea {
+    resize: none;
+}
+
 
 .comentaBueno{
 	float : left;
