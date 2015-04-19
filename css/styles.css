@@ -103,7 +103,7 @@ input:focus::-webkit-input-placeholder{
 }
 
 body{
-	
+
 	background: url(../img/b-marco.jpg) top left no-repeat;
 	background-attachment:fixed;
 	background-size: cover;
@@ -279,6 +279,13 @@ header{
 
 /*clases info*/
 
+.info_especifica_grupo{
+  padding: 10px 30px 10px 10px;
+  font-family: plane;
+  height: 220px;
+  width: 960px;
+}
+
 .foto_hotel2{
 
 	float: left;
@@ -290,7 +297,7 @@ header{
 .info_especifica{
   float: left;
   height: 250px;
-  width: 555px;
+  width: 520px;
 }
 
 .precio{
@@ -300,29 +307,48 @@ header{
 }
 .valorar{
 
-  	float: left;
+  float: left;
 	margin-top:10px;
 	margin-right: 10px;
-    height: 150px;
-    width: 160px;
+  height: 250px;
+  width: 160px;
 	text-align:center;
 
 }
 
+.boton_atras{
+	float:right;
+	border: 1px solid #00748f;
+	height: 25px;
+	width: 133px;
+	margin-top: 30px;
+  margin-bottom: 30px;
+  margin-right: 4px;
+  cursor: pointer;
+  font: 20px plane;
+  color: #fafafa;
+  background-color: #0483a0;
+  background-image: linear-gradient(top, #31b2c3, #0483a0);
+  border-radius: 3px;
+	text-align: center;
+	padding: 10px;
+}
+
+
 .info_general{
   padding: 10px 30px 10px 10px;
   font-family: plane;
+  height: 265px;
+  width: 960px;
 }
 
 .listaValores{
-	list-style:none;	
-	padding: 0 0 0 0;	
+	list-style:none;
+	padding: 0 0 0 0;
 }
 
 .listaValores li{
-
 	display: inline;
-	
 }
 
 .iconos-servicios{
@@ -333,12 +359,9 @@ header{
 	float : left;
 	height : 230px;
 	width : 735px;
-	  border-width: 5px;
-   /* border-style: groove; 
+	border-width: 5px;
 	padding: 0px 10px 0px 10px;
-    border-color: #6B89A5 ; */
-	padding: 0px 10px 0px 10px;
-		margin-left : 10px;
+	margin-left : 10px;
 	margin-right : 15px;
 	background : #CDDBF0;
 	border-radius : 15px;
@@ -347,13 +370,9 @@ header{
 .servicios{
 	float : left;
 	height : 230px;
-	width : 150px;
-	/*border-width: 5px;
+	width : 160px;
 	padding: 0px 10px 0px 10px;
-    border-style: groove;
-    border-color: #6B89A5;*/
-	padding: 0px 10px 0px 10px;
-		background : #CDDBF0;
+	background : #CDDBF0;
 	border-radius : 15px;
 }
 
@@ -362,7 +381,9 @@ header{
 	margin-right : 10px;
 	background : #CDDBF0;
 	border-radius : 15px;
-	height : 200px;
+	height : 155px;
+  width: 980px;
+  padding-top:22px;
 }
 
 
@@ -385,21 +406,4 @@ header{
 	height : 180px;
 	width : 400px;
 	padding: 0px 10px 0px 10px;
-}
-
-.boton_atras{
-	float:right;
-	border: 1px solid #00748f;
-	height: 25px;
-	width: 133px;
-	margin-top: 30px;
-	margin-right: 20px;
-    cursor: pointer;
-    font: 20px plane;
-    color: #fafafa;
-    background-color: #0483a0;
-    background-image: linear-gradient(top, #31b2c3, #0483a0);
-    border-radius: 3px;
-	text-align: center;
-	padding: 10px;
 }
