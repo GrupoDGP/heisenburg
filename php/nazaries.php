@@ -3,7 +3,7 @@
 <div class ="foto_hotel2">
 <div id="slider">
     <div id="slidesContainer">
-        <div class="slide"><img src="img/hoteles/nazaries/nazaries1.jpg" width="230px" height="200px" alt="Imagen hotel" title="Imagen hotel"></div>
+        <div class="slide"><img onload="rotar()" src="img/hoteles/nazaries/nazaries1.jpg" width="230px" height="200px" alt="Imagen hotel" title="Imagen hotel"></div>
         <div class="slide"><img src="img/hoteles/nazaries/nazaries2.jpg" width="230px" height="200px" alt="Imagen hotel" title="Imagen hotel"></div>
         <div class="slide"><img src="img/hoteles/nazaries/nazaries3.jpg" width="230px" height="200px" alt="Imagen hotel" title="Imagen hotel"></div>
         <div class="slide"><img src="img/hoteles/nazaries/nazaries4.jpg" width="230px" height="200px" alt="Imagen hotel" title="Imagen hotel"></div>
@@ -35,7 +35,7 @@
 
 <div class ="valorar">
 
-<a href="../index.html"><div class ="boton_atras">ATRAS </div></a>
+<a href="./index.php"><div class ="boton_atras">ATRAS </div></a>
 
 <h3   > Valorar</h3>
 
