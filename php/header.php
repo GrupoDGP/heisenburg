@@ -29,3 +29,4 @@
             <input type="submit" id="submit" value="Buscar">
         </form>
     </div> <!-- end busqueda -->
+</header>
