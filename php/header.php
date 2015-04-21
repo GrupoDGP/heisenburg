@@ -17,8 +17,8 @@
 
     <div class = "busqueda">
         <form class = "barra_sesion">
-            <input type="text" id="texto" size ="20" placeholder="Buscar..." required>
-            <input type="text" id="texto" size ="13" placeholder="Precio">
+            <input type="text" id="texto" size ="18" placeholder="Buscar..." required>
+            <input type="text" id="texto" size ="11" placeholder="Precio">
             <input type="date" id="texto" size ="13" placeholder="Fecha">
             <select name="tipo" id="desplegable">
                 <option value="1">1</option>
@@ -32,12 +32,9 @@
 	
 	<!-- submenu de categorias de hoteles-->
 	<div class = "menu">
-		<li>
-			hoteles
-		</li>
-		<li>
-			casas rurales
-		</li>
+		<a href="#"><li>HOTELES</li></a>
+		<a href="#"><li>CASAS RURALES</li></a>
+		<a href="index.php?page=registro"><li id="boton_registro">¡REGISTRATE!</li></a>	
 	</div>
 	
 </header>

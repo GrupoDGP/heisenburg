@@ -180,15 +180,30 @@ header{
 }
 
 .menu{
-	position : absolute;
-	color: red;
+	
+	position: absolute;
+	font-family: plane;
 	margin-top : 180px;
-	margin-left : 400px;
-	list-style:none;
-	width : 1000px;
+	margin-left : 18%;
+	list-style:none;	
 	height : 3px;
 	z-index : 9991;
-	/*#padding-top:100px;*/
+}
+
+.menu a{
+	
+	text-decoration: none;
+	color:inherit;
+	
+}
+
+.menu li{
+	
+	display: inline;	
+	border: 1px solid black;
+	background-color: #C9C3C3;
+	padding: 8px 40px 8px 40px;
+	
 }
 
 .sesion{
@@ -468,4 +483,11 @@ header{
 
 #tituloComentarios{
 	text-align:center;
+}
+
+#boton_registro{
+	
+	background-color: #0483a0;
+	color: white;
+	
 }
