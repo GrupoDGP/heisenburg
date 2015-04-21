@@ -4,7 +4,7 @@
     </div> <!-- end titulo -->
 
     <div class = "logo">
-        <a href="index.html"><img id = "logo" src = "img/logoheisen.png"/></a>
+        <a href="index.php"><img id = "logo" src = "img/logoheisen.png"/></a>
     </div> <!-- end logo -->
 
     <div class = "sesion">
@@ -29,4 +29,15 @@
             <input type="submit" id="submit" value="Buscar">
         </form>
     </div> <!-- end busqueda -->
+	
+	<!-- submenu de categorias de hoteles-->
+	<div class = "menu">
+		<li>
+			hoteles
+		</li>
+		<li>
+			casas rurales
+		</li>
+	</div>
+	
 </header>

@@ -107,6 +107,7 @@ body{
 	background: url(../img/b-marco.jpg) top left no-repeat;
 	background-attachment:fixed;
 	background-size: cover;
+	
 
 }
 
@@ -135,7 +136,7 @@ h2{
 
 header{
 
-	height: 190px;
+	height: 220px;
 	background-image: url(../img/b-header.jpg);
 
 }
@@ -176,6 +177,18 @@ header{
 	background-color: #C9C3C3;
 	overflow: hidden;
 
+}
+
+.menu{
+	position : absolute;
+	color: red;
+	margin-top : 180px;
+	margin-left : 400px;
+	list-style:none;
+	width : 1000px;
+	height : 3px;
+	z-index : 9991;
+	/*#padding-top:100px;*/
 }
 
 .sesion{
