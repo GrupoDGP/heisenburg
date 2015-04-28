@@ -50,7 +50,19 @@ $dbhandler->close();
 return $result;
 }
 
-
+//devuelve unicamente el hotel de nombre dado (revisar)
+function leer_hotel($nombre,$dbhandler){
+    $dbhandler->connect();
+    $res=$dbhandler->query("SELECT * FROM HOTELES WHERE NOMBRE='".$nombre . "''");
+    if ($res->num_rows > 0){
+        $row=$res->fetch_assoc();
+        $hotel=new Hotel;
+        $hotel->read_hotel($row);
+        return $hotel;
+    }else {
+        echo "no results";
+    }
+}
 
 
 
