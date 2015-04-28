@@ -84,9 +84,9 @@ function rotar(){
 	var timer = setInterval(sliderScroll, 10);
 	//Asigna el ancho total de los slides al contenedor
 	//La anchura total se obtiene multiplicando la medida de un slide por el nÃºmero de slides)
-	document.getElementById("slidesContainer").style.width="920px";//230*4=920
+	document.getElementById("slidesContainer").style.width="1150px";//230*4=920
 	var incremento=0;
-	var totalWidth =690;//4*230-230=690//Calcula la anchura total menos el ultimo slide.
+	var totalWidth =920;//4*230-230=690//Calcula la anchura total menos el ultimo slide.
 	var position=0;
 	function sliderScroll(){
 	    position =document.getElementById("slider").scrollLeft; //Calcula la posicion actual del contenedor

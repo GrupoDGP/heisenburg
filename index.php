@@ -8,10 +8,13 @@
 <script type="text/javascript" src="js/scripts.js"></script>
 
 <?php
-    $current_page=$_GET['page'];
-    if(!isset($current_page) || empty($current_page)){
+	if(isset($_GET['page']))
+    	$current_page=$_GET['page'];
+	else
+		$current_page="hoteles";
+	/*if(!isset($current_page) || empty($current_page)){
         $current_page="hoteles";
-    }
+    }*/
 ?>
 
 

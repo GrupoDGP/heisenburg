@@ -7,6 +7,7 @@
         <div class="slide"><img src="img/hoteles/nazaries/nazaries2.jpg" width="230px" height="200px" alt="Imagen hotel" title="Imagen hotel"></div>
         <div class="slide"><img src="img/hoteles/nazaries/nazaries3.jpg" width="230px" height="200px" alt="Imagen hotel" title="Imagen hotel"></div>
         <div class="slide"><img src="img/hoteles/nazaries/nazaries4.jpg" width="230px" height="200px" alt="Imagen hotel" title="Imagen hotel"></div>
+        <div class="slide"><img src="img/hoteles/nazaries/nazaries1.jpg" width="230px" height="200px" alt="Imagen hotel" title="Imagen hotel"></div>
 
     </div> <!-- /slidesContainer-->
 </div> <!-- /slider -->
