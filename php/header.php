@@ -29,12 +29,13 @@
             <input type="submit" id="submit" value="Buscar">
         </form>
     </div> <!-- end busqueda -->
-	
+
 	<!-- submenu de categorias de hoteles-->
 	<div class = "menu">
-		<a href="#"><li>HOTELES</li></a>
-		<a href="#"><li>CASAS RURALES</li></a>
-		<a href="index.php?page=registro"><li id="boton_registro">¡REGISTRATE!</li></a>	
+		<a href="index.php"><li>HOTELES</li></a>
+		<a href="index.php"><li>CASAS RURALES</li></a>
+		<a href="index.php?page=registro"><li id="boton_registro">¡REGISTRATE!</li></a>
+        <a href="index.php?page=addhotel"><li id="boton_registro">¡añadir hotel!</li></a>
 	</div>
-	
+
 </header>

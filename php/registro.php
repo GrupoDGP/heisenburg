@@ -1,7 +1,7 @@
 <h1> Contacto </h1>
 <div id="formularioContacto">
 
-    <form method="post" action="index.php?page=registro" > 
+    <form method="post" action="index.php?page=registro" >
         <table id="tablaformulario">
             <tr>
                 <td> <label for="nombre"> Nombre: </label> </td>
@@ -48,7 +48,7 @@
 
 <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $conexion=mysql_connect("localhost","root","granada")
+        $conexion=mysql_connect("localhost","root","")
         or die("Problemas en la conexion");
         mysql_select_db("heisenburg",$conexion) or
         die("Problemas en la seleccion de la base de datos");
@@ -56,6 +56,6 @@
                 . "('$_REQUEST[nombre]','$_REQUEST[apellidos]','$_REQUEST[dni]','$_REQUEST[usuario]','$_REQUEST[password]','$_REQUEST[email]','$_REQUEST[tipo]')",
         $conexion) or die("Problemas en el select".mysql_error());
         mysql_close($conexion);
-        echo "El alumno fue dado de alta.";
+        echo "<script> alert(\"El alumno fue dado de alta\");</script>";
     }
 ?>
