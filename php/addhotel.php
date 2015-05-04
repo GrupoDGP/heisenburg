@@ -8,33 +8,33 @@
             <tr>
                 <td> <label> Nombre: </label> </td>
                 <td> <input type="text" name="nombre"  placeholder="Introduce nombre hotel."  required="true" autofocus> </input> </td>
-            
+
                 <td><label > Precio: </label> </td>
                 <td><input type="number" name="precio"  placeholder="precio minimo." required="true" > </input> </td>
             </tr>
             <tr>
                 <td><label > Direccion: </label></td>
                 <td><input type="text" name="direccion" placeholder="Introduce direccion hotel." required="true"> </input></td>
-            
+
                 <td><label> Estrellas: </label> </td>
                 <td><input type="number" min="1" max="5" name="estrellas"  placeholder="Introduce el numero de estrellas." required="true" > </input> </td>
             </tr>
             <tr>
                 <td><label > Telefono: </label> </td>
                 <td><input type="number" name="telefono" placeholder="Introduce el telefono del hotel." required="true"></input>  </td>
-            
+
                 <td><label > Email: </label> </td>
                 <td><input type="email" name="email"  placeholder="Introduce email del hotel." required="true"> </input> </td>
             </tr>
             <tr>
                 <td><label > Imagenes: </label> </td>
                 <td>
-                    <input type="text" name="Imagene1"  placeholder="Introduce la ruta de la imagen1"></input>
-                    <input type="text" name="Imagene2"  placeholder="Introduce la ruta de la imagen2"></input>
-                    <input type="text" name="Imagene3"  placeholder="Introduce la ruta de la imagen3"></input>
-                    <input type="text" name="Imagene4"  placeholder="Introduce la ruta de la imagen4"></input>
+                    <input type="text" name="imagen1"  placeholder="Introduce la ruta de la imagen1"></input>
+                    <input type="text" name="imagen2"  placeholder="Introduce la ruta de la imagen2"></input>
+                    <input type="text" name="imagen3"  placeholder="Introduce la ruta de la imagen3"></input>
+                    <input type="text" name="imagen4"  placeholder="Introduce la ruta de la imagen4"></input>
                 </td>
-            
+
                 <td><label> Video: </label> </td>
                 <td><input type="text" name="Video"  placeholder="Introduce la url del video explicativo."></input>  </td>
             </tr>
@@ -45,6 +45,14 @@
                         <option value="Casa Rural">Casa Rural</option>
                 </td>
             </tr>
+			<tr>
+                <td> <label> Resumen Especifico: </label> </td>
+                <td> <input type="text" name="resumen"  placeholder="Introduce resumen Especifico."  > </input> </td>
+
+				<td> <label> Resumen Escueto: </label> </td>
+                <td> <input type="text" name="resumenCorto"  placeholder="Introduce resumen Escueto."  > </input> </td>
+            </tr>
+
 
             <tr>
                 <td><button type="submit" name="submit">Enviar</button></td>
@@ -61,7 +69,7 @@
         include "php/includes/dbhandler.php";
         $dbhandler = new db_handler("localhost","root","heisenburg");
         $dbhandler->connect();
-        $sql="insert into alojamientos(nombre,tipo,precio, direccion, estrellas, telefono, email, video) values ('$_REQUEST[nombre]','$_REQUEST[tipo]','$_REQUEST[precio]','$_REQUEST[direccion]','$_REQUEST[estrellas]','$_REQUEST[telefono]','$_REQUEST[email]','$_REQUEST[video]')";
+        $sql="insert into alojamientos(nombre,tipo,precio, direccion, estrellas, telefono, email, video,resumen,resumenCorto,imagen1,imagen2,imagen3,imagen4) values ('$_REQUEST[nombre]','$_REQUEST[tipo]','$_REQUEST[precio]','$_REQUEST[direccion]','$_REQUEST[estrellas]','$_REQUEST[telefono]','$_REQUEST[email]','$_REQUEST[video]','$_REQUEST[resumen]','$_REQUEST[resumenCorto]','$_REQUEST[imagen1]','$_REQUEST[imagen2]','$_REQUEST[imagen3]','$_REQUEST[imagen4]')";
         if ($dbhandler->query($sql) === TRUE) {
             echo "<script> alert(\"Hotel dado de alta\");</script>";
         } else {

@@ -13,10 +13,10 @@ class Alojamiento{
     private $video;
     private $resumen;
     private $resumenCorto;
-    private $imagene1;
-    private $imagene2;
-    private $imagene3;
-    private $imagene4;
+    private $imagen1;
+    private $imagen2;
+    private $imagen3;
+    private $imagen4;
 
     //se le pasa una "row" del query
     public function read_hotel($row){
@@ -40,7 +40,7 @@ class Alojamiento{
 
     public function mostrarInformacionReducida(){
         echo "<a class=\"enlace\" href=\"./index.php?page=".$this->idAlojamiento."\"  >";
-        echo "<h2 id=\"nombre_hotel\"> HOTEL ".$this->nombre." <br>";
+        echo "<h2 id=\"nombre_hotel\"> ".$this->tipo." ".$this->nombre." <br>";
         echo "Precio: ".$this->precio." €";
         echo "</h2><br>";
         echo "<div id =\"foto_hotel\">";
