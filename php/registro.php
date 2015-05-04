@@ -1,4 +1,7 @@
-<h1> Contacto </h1>
+<div id = "tituloComentarios">
+	<h1> REGISTRO </h1>
+</div>
+
 <div id="formularioContacto">
     <form method="post" action="index.php?page=registro" >
         <table id="tablaformulario">
@@ -6,24 +9,21 @@
                 <td> <label > Nombre: </label> </td>
                 <!-- no se si se pueden utilizar los required, en cualquier caso he creado el script required="required"-->
                 <td> <input type="text" name="nombre"  placeholder="Introduce nombre."  required="true" autofocus> </input> </td>
-            </tr>
-            <tr>
+            
                 <td><label> Apellidos: </label> </td>
                 <td><input type="text" name="apellidos" placeholder="Introduce apellidos." required="true"> </input> </td>
             </tr>
             <tr>
                 <td><label > DNI: </label></td>
                 <td><input type="text" name="dni"placeholder="Introduce DNI." required="true" > </input></td>
-            </tr>
-            <tr>
+            
                 <td><label > Usuario: </label> </td>
                 <td><input type="text" name="usuario" placeholder="Introduce nombre de usuario." required="true" > </input> </td>
             </tr>
             <tr>
                 <td><label > Contraseña: </label> </td>
                 <td><input type="password" name="password"  placeholder="Introduce contraseña." required="true"></input>  </td>
-            </tr>
-            <tr>
+            
                 <td><label > Email: </label> </td>
                 <td><input type="email" name="email" placeholder="Introduce email." required="true"> </input> </td>
             </tr>

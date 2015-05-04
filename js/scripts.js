@@ -89,14 +89,15 @@ function rotar(){
 	var totalWidth =920;//4*230-230=690//Calcula la anchura total menos el ultimo slide.
 	var position=0;
 	function sliderScroll(){
+		incremento=position+1;
 	    position =document.getElementById("slider").scrollLeft; //Calcula la posicion actual del contenedor
 		//si estamos al inicio de una imagne que se pare durante 1seg
 		if(position%230==0){
 			pausecomp(1000);
 		}
 		//movemos scroll
-		incremento=position+1;
-		if(incremento>totalWidth){//si es el final del scroll -> volvmeos a empezar
+		
+		if(incremento>=totalWidth){//si es el final del scroll -> volvmeos a empezar
 			slider.scrollLeft=0;
 		}
 		else{

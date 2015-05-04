@@ -66,8 +66,15 @@ Todas las medidas de márgenes en px;
 
 #boton_busqueda label{
 	
+	cursor: pointer;
 	float: left;
 	font-family: plane;
+	
+}
+
+#boton_busqueda label:hover{
+	
+	background-color: #6FC9D5;
 	
 }
 
@@ -89,7 +96,7 @@ Todas las medidas de márgenes en px;
 
 #boton_busqueda input:checked+span{
 	
-	background-color: #911;
+	background-color: #0483a0;
 	color: #fff;
 	
 }
@@ -224,7 +231,7 @@ header{
 	
 	position: absolute;
 	font-family: plane;
-	margin-top : 180px;
+	margin-top : 175px;
 	margin-left : 630px;
 	list-style:none;	
 	height : 3px;
@@ -531,5 +538,33 @@ header{
 	
 	background-color: #0483a0;
 	color: white;
+	
+}
+
+#boton_registro:hover{
+	
+	background-color: #31b2c3;
+	
+}
+
+#formularioContacto{
+	
+	border: 1px solid black;
+	width: 600px;
+	margin: 0 auto;
+	margin-bottom: 2px;
+	
+}
+
+#tablaformulario td{
+	
+	text-align: center;
+	font-family: plane;
+	
+}
+
+td#submit{
+	
+	width: 700px;
 	
 }
