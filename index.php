@@ -12,9 +12,6 @@
     	$current_page=$_GET['page'];
 	else
 		$current_page="hoteles";
-	/*if(!isset($current_page) || empty($current_page)){
-        $current_page="hoteles";
-    }*/
 ?>
 
 

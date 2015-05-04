@@ -54,51 +54,51 @@ Todas las medidas de márgenes en px;
 }
 
 #boton_busqueda{
-	
+
 	overflow: auto;
 	margin: 4px;
 	background-color: #EFEFEF;
 	border-radius: 4px;
 	border: 1px solid #D0D0D0;
 	float: left;
-	
+
 }
 
 #boton_busqueda label{
-	
+
 	cursor: pointer;
 	float: left;
 	font-family: plane;
-	
+
 }
 
 #boton_busqueda label:hover{
-	
+
 	background-color: #6FC9D5;
-	
+
 }
 
 #boton_busqueda label span{
-	
+
 	width: 285px;
 	text-align: center;
 	padding: 3px 0px;
 	display: block;
-	
+
 }
 
 #boton_busqueda label input{
-	
+
 	position: absolute;
 	top: -20px;
-	
+
 }
 
 #boton_busqueda input:checked+span{
-	
+
 	background-color: #0483a0;
 	color: #fff;
-	
+
 }
 
 input:focus::-webkit-input-placeholder{
@@ -155,7 +155,7 @@ body{
 	background: url(../img/b-marco.jpg) top left no-repeat;
 	background-attachment:fixed;
 	background-size: cover;
-	
+
 
 }
 
@@ -228,31 +228,31 @@ header{
 }
 
 .menu{
-	
+
 	position: absolute;
 	font-family: plane;
 	margin-top : 175px;
 	margin-left : 630px;
-	list-style:none;	
+	list-style:none;
 	height : 3px;
 	z-index : 8991;
 }
 
 .menu a{
-	
+
 	text-decoration: none;
 	color:inherit;
-	
+
 }
 
 .menu li{
-	
-	display: inline;	
+
+	display: inline;
 	border: 1px solid black;
 	border-radius: 4px;
 	background-color: #C9C3C3;
-	padding: 8px 27px 8px 27PX;
-	
+	padding: 8px 13px 8px 23PX;
+
 }
 
 .sesion{
@@ -535,36 +535,39 @@ header{
 }
 
 #boton_registro{
-	
+
 	background-color: #0483a0;
 	color: white;
-	
+
 }
 
 #boton_registro:hover{
-	
+
 	background-color: #31b2c3;
-	
+
 }
 
 #formularioContacto{
-	
-	border: 1px solid black;
+
+    background : #CDDBF0;
+	border-radius : 15px;
+    padding-top:10px;
+	padding-bottom: 10px;
 	width: 600px;
 	margin: 0 auto;
 	margin-bottom: 2px;
-	
+
 }
 
 #tablaformulario td{
-	
+
 	text-align: center;
 	font-family: plane;
-	
+
 }
 
 td#submit{
-	
+
 	width: 700px;
-	
+
 }

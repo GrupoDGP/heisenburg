@@ -46,7 +46,7 @@ function leer_alojamiento($query,$dbhandler){
         while($row = $table->fetch_assoc()) {
             $alojamiento=new Alojamiento;
             $alojamiento->read_hotel($row);
-            $result[]=$actividad;
+            $result[]=$alojamiento;
         }
     } else {
         echo "no results";
@@ -55,10 +55,10 @@ function leer_alojamiento($query,$dbhandler){
     return $result;
 }
 
-//devuelve unicamente el hotel de nombre dado (revisar)
-function leer_hotel($nombre,$dbhandler){
+//devuelve unicamente el hotel de id dado
+function leer_hotel($id,$dbhandler){
     $dbhandler->connect();
-    $res=$dbhandler->query("SELECT * FROM HOTELES WHERE NOMBRE='".$nombre . "''");
+    $res=$dbhandler->query("SELECT * FROM ALOJAMIENTOS WHERE idAlojamiento='".$id ."'");
     if ($res->num_rows > 0){
         $row=$res->fetch_assoc();
         $alojamiento=new Alojamiento;
@@ -66,6 +66,7 @@ function leer_hotel($nombre,$dbhandler){
         return $alojamiento;
     }else {
         echo "no results";
+        return FALSE; 
     }
 }
 
