@@ -11,7 +11,7 @@
 	if(isset($_GET['page']))
     	$current_page=$_GET['page'];
 	else
-		$current_page="hoteles";
+		$current_page="alojamientos";
 ?>
 
 

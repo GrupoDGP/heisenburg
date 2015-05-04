@@ -54,7 +54,7 @@ class Alojamiento{
 
 }
 //devuelve todas los alojameintos en un array dada una query
-function leer_alojamiento($query,$dbhandler){
+function leer_alojamientos($query,$dbhandler){
     $dbhandler->connect();
     $table=$dbhandler->query($query);
     $result=array();
@@ -73,9 +73,7 @@ function leer_alojamiento($query,$dbhandler){
 }
 
 //devuelve unicamente el hotel de id dado
-function leer_hotel($id,$dbhandler){
-    $dbhandler->connect();
-
+function leer_alojamiento($id,$dbhandler){
     $res=$dbhandler->query("SELECT * FROM `alojamientos` WHERE `idAlojamiento`=".$id);
     if ($res->num_rows > 0){
         $row=$res->fetch_assoc();
