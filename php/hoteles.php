@@ -1,18 +1,33 @@
-<a href="./index.php?page=nazaries" style="text-decoration: none; color:inherit" >
-  <div class = "hotel_izquierda">
-    <h2 id="nombre_hotel"> HOTEL NAZARIES <br>
-    Precio: 76.50 €
-    </h2><br>
-    <div id ="foto_hotel">
-      <img id="foto_hotel" src = "img/hoteles/nazaries/nazaries2.jpg"/>
-    </div>
+<?php
+include "php/includes/dbhandler.php";
+include "php/includes/alojamiento_class.php";
+$dbhandler = new db_handler("localhost","root","heisenburg");
+$dbhandler->connect();
+    $id=1;
+    echo "<div class = \"hotel_izquierda\">";
+    $alojamento=leer_hotel($id,$dbhandler);
+    $dbhandler->close();
+    $alojamento->mostrarInformacionReducida();
+    echo "</div><!-- end hotel_izquierda -->";
 
-    <div>
-        <p>Nazaríes Business & Spa se encuentra a pocos metros de la calle Recogidas
-            y a 500 metros del Palacio de Congresos.
-            Cuenta con un spa y habitaciones con TV de pantalla plana...</p>
-    </div>
-</div></a><!-- end hotel_izquierda -->
+/*
+<div class = "hotel_izquierda">
+    <a class="enlace" href="./index.php?page=nazaries" >
+        <h2 id="nombre_hotel"> HOTEL NAZARIES <br>
+        Precio: 76.50 €
+        </h2><br>
+        <div id ="foto_hotel">
+            <img id="foto_hotel" src = "img/hoteles/nazaries/nazaries2.jpg"/>
+        </div>
+
+        <div>
+                <p>Nazaríes Business & Spa se encuentra a pocos metros de la calle Recogidas
+                y a 500 metros del Palacio de Congresos.
+                Cuenta con un spa y habitaciones con TV de pantalla plana...</p>
+        </div>
+    </a>
+</div><!-- end hotel_izquierda -->*/
+?>
 
 <div class = "hotel_derecha">
     <h2 id="nombre_hotel"> HOTEL SARAY <br>

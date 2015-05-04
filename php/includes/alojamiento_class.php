@@ -12,13 +12,14 @@ class Alojamiento{
     private $email;
     private $video;
     private $resumen;
+    private $resumenCorto;
     private $imagene1;
     private $imagene2;
     private $imagene3;
     private $imagene4;
 
     //se le pasa una "row" del query
-    function read_hotel($row){
+    public function read_hotel($row){
         $this->idAlojamiento=$row["idAlojamiento"];
         $this->nombre=$row["nombre"];
         $this->tipo=$row["tipo"];
@@ -29,10 +30,26 @@ class Alojamiento{
         $this->email=$row["email"];
         $this->video=$row["video"];
         $this->resumen=$row["resumen"];
-        $this->imagene1=$row["imagene1"];
-        $this->imagene2=$row["imagene2"];
-        $this->imagene3=$row["imagene3"];
-        $this->imagene4=$row["imagene4"];
+        $this->resumenCorto=$row["resumenCorto"];
+        $this->imagen1=$row["imagen1"];
+        $this->imagen2=$row["imagen2"];
+        $this->imagen3=$row["imagen3"];
+        $this->imagen4=$row["imagen4"];
+    }
+
+
+    public function mostrarInformacionReducida(){
+        echo "<a class=\"enlace\" href=\"./index.php?page=".$this->idAlojamiento."\"  >";
+        echo "<h2 id=\"nombre_hotel\"> HOTEL ".$this->nombre." <br>";
+        echo "Precio: ".$this->precio." €";
+        echo "</h2><br>";
+        echo "<div id =\"foto_hotel\">";
+        echo "<img id=\"foto_hotel\" src = \"".$this->imagen1."\">";
+        echo "</div>";
+        echo "<div>";
+        echo "<p>".$this->resumenCorto."</p>";
+        echo "</div>";
+        echo "</a>";
     }
 
 }
@@ -58,7 +75,8 @@ function leer_alojamiento($query,$dbhandler){
 //devuelve unicamente el hotel de id dado
 function leer_hotel($id,$dbhandler){
     $dbhandler->connect();
-    $res=$dbhandler->query("SELECT * FROM ALOJAMIENTOS WHERE idAlojamiento='".$id ."'");
+
+    $res=$dbhandler->query("SELECT * FROM `alojamientos` WHERE `idAlojamiento`=".$id);
     if ($res->num_rows > 0){
         $row=$res->fetch_assoc();
         $alojamiento=new Alojamiento;
@@ -66,10 +84,7 @@ function leer_hotel($id,$dbhandler){
         return $alojamiento;
     }else {
         echo "no results";
-        return FALSE; 
+        return FALSE;
     }
 }
-
-
-
 ?>
