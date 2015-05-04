@@ -27,15 +27,25 @@
                 <option value="4">4</option>
                 <option value="5">5</option>
             <input type="submit" id="submit" value="Buscar">
+            <br>
+            <br>
+            <div id = "boton_busqueda">
+                <label>
+                    <input type="checkbox" value="hotelcheck"><span>HOTELES</span>
+                </label>
+            </div>
+            <div id = "boton_busqueda">
+                <label>
+                	<input type="checkbox" value="hotelcheck"><span>CASAS RURALES</span>
+        		</label>
+            </div>
         </form>
     </div> <!-- end busqueda -->
 
 	<!-- submenu de categorias de hoteles-->
 	<div class = "menu">
-		<a href="index.php"><li>HOTELES</li></a>
-		<a href="index.php"><li>CASAS RURALES</li></a>
 		<a href="index.php?page=registro"><li id="boton_registro">¡REGISTRATE!</li></a>
-        <a href="index.php?page=addhotel"><li id="boton_registro">¡añadir hotel!</li></a>
+        <a href="index.php?page=addhotel"><li id="boton_registro">¡AGREGAR HOTEL!</li></a>
 	</div>
 
 </header>
