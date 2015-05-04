@@ -225,7 +225,7 @@ header{
 	position: absolute;
 	font-family: plane;
 	margin-top : 180px;
-	margin-left : 634px;
+	margin-left : 630px;
 	list-style:none;	
 	height : 3px;
 	z-index : 8991;
@@ -244,7 +244,7 @@ header{
 	border: 1px solid black;
 	border-radius: 4px;
 	background-color: #C9C3C3;
-	padding: 8px 30px 8px 30px;
+	padding: 8px 27px 8px 27PX;
 	
 }
 
