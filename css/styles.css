@@ -53,6 +53,47 @@ Todas las medidas de márgenes en px;
     box-shadow: 0 1px 1px #bbb inset;
 }
 
+#boton_busqueda{
+	
+	overflow: auto;
+	margin: 4px;
+	background-color: #EFEFEF;
+	border-radius: 4px;
+	border: 1px solid #D0D0D0;
+	float: left;
+	
+}
+
+#boton_busqueda label{
+	
+	float: left;
+	font-family: plane;
+	
+}
+
+#boton_busqueda label span{
+	
+	width: 285px;
+	text-align: center;
+	padding: 3px 0px;
+	display: block;
+	
+}
+
+#boton_busqueda label input{
+	
+	position: absolute;
+	top: -20px;
+	
+}
+
+#boton_busqueda input:checked+span{
+	
+	background-color: #911;
+	color: #fff;
+	
+}
+
 input:focus::-webkit-input-placeholder{
 	/* Esto borra los placeholders cuando se clika dentro */
 	color: transparent;
@@ -184,7 +225,7 @@ header{
 	position: absolute;
 	font-family: plane;
 	margin-top : 180px;
-	margin-left : 18%;
+	margin-left : 634px;
 	list-style:none;	
 	height : 3px;
 	z-index : 8991;
@@ -201,8 +242,9 @@ header{
 	
 	display: inline;	
 	border: 1px solid black;
+	border-radius: 4px;
 	background-color: #C9C3C3;
-	padding: 8px 40px 8px 40px;
+	padding: 8px 30px 8px 30px;
 	
 }
 
