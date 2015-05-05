@@ -2,17 +2,25 @@
 
 
     	$nombre;
-    	$numEstrellas;
+		$tipo;
+		$precio;
+		$direccion;
+    	$estrellas;
+		$telefono;
+		$email;
+		$video;
     	$resumen;
+		$resumenCorto;
+		$imagen1; $imagen2; $imagen3; $imagen4;
     	$servicios;
+		
+		$valoracion;
     	$star= "img/star.png";
-    	$precio= 80;
-    	$direccion= "Direccion: Calle Maestro Montero, 12, 18004 Granada";
-    	$valoracion= 8.5;
     	$valor1= "img/valorar/muybien.png";
     	$valor2= "img/valorar/bien.png";
     	$valor3= "img/valorar/regular.png";
     	$valor4= "img/valorar/mal.png";
+		$
     ?>
 
 
@@ -22,25 +30,36 @@
 <div class ="foto_hotel2">
 <div id="slider">
     <div id="slidesContainer">
-        <div class="slide"><img onload="rotar()" src="img/hoteles/nazaries/nazaries1.jpg" width="230px" height="200px" alt="Imagen hotel" title="Imagen hotel"></div>
+        <!-- <div class="slide"><img onload="rotar()" src="img/hoteles/nazaries/nazaries1.jpg" width="230px" height="200px" alt="Imagen hotel" title="Imagen hotel"></div>
         <div class="slide"><img src="img/hoteles/nazaries/nazaries2.jpg" width="230px" height="200px" alt="Imagen hotel" title="Imagen hotel"></div>
         <div class="slide"><img src="img/hoteles/nazaries/nazaries3.jpg" width="230px" height="200px" alt="Imagen hotel" title="Imagen hotel"></div>
-        <div class="slide"><img src="img/hoteles/nazaries/nazaries4.jpg" width="230px" height="200px" alt="Imagen hotel" title="Imagen hotel"></div>
-
+        <div class="slide"><img src="img/hoteles/nazaries/nazaries4.jpg" width="230px" height="200px" alt="Imagen hotel" title="Imagen hotel"></div> -->
+		
+		<?php 
+			echo "<div class='slide'><img onload='rotar()' src= ". $imagen1 . " width='230px' height='200px' alt='Imagen hotel' title='Imagen hotel'></div> "
+			echo "<div class='slide'><img src=" . $imagen2 . " width='230px' height='200px' alt='Imagen hotel' title='Imagen hotel'></div>"
+			echo "<div class='slide'><img src=" . $imagen3 . " width='230px' height='200px' alt='Imagen hotel' title='Imagen hotel'></div>"
+			echo "<div class='slide'><img src=" . $imagen4 . " width='230px' height='200px' alt='Imagen hotel' title='Imagen hotel'></div>"
+		?>
     </div> <!-- /slidesContainer-->
 </div> <!-- /slider -->
 </div> <!-- end foto_hotel -->
 
 
 <div class ="info_especifica">
-<h1 > HOTEL NAZARIES
-
+<h1 > <!-- HOTEL NAZARIES -->
+	<?php echo $nombre; ?>
   <!-- <img src="$star height="20px" alt="estrella"> -->
-  <img src="img/star.png" height="20px" alt="estrella">
-  <img src="img/star.png" height="20px" alt="estrella">
+  <?php 
+	for ($i = 0; $i < $estrellas ; $i++)
+		echo "<img src='img/star.png' height='20px' alt='estrella'>"
+  ?>
+  <!-- <img src="img/star.png" height="20px" alt="estrella">
+  <img src="img/star.png" height="20px" alt="estrella"> -->
+  
 </h1>
-<p class="precio"> Precio por noche desde 80€</p>
-<p> Direccion: Calle Maestro Montero, 12, 18004 Granada
+<p class="precio"> <?php echo "Precio por noche desde" . $precio ."€" ?> </p>
+<p> <?php echo $direccion ?>
 
 <div id="TEST" onclick="closepopup('MAPpopUp')" style="display:none"></div>
 	<a href="#" onClick="popup('MAPpopUp',600,450)">Ver mapa</a>
@@ -49,7 +68,7 @@
     </div>
 </p>
 
-<p class="precio"> Valoracion 8,5</p>
+<p class="precio"> Valoracion <?php $valoracion ?> </p>
 </div> <!-- end info_espeficia -->
 
 
@@ -57,7 +76,7 @@
 
 <a href="./index.php"><div class ="boton_atras">ATRAS </div></a>
 
-<h3   > Valorar</h3>
+<h3> Valorar</h3>
 
 	<ul class="listaValores">
 		<li>
@@ -80,14 +99,15 @@
 
 <div class ="info_general">
 <div class ="resumen">
-  <h4 > HOTEL NAZARIES</h4>
-  <p>
+  <?php echo "<h4 >". $nombre . "</h4>"?> <!-- <h4 > HOTEL NAZARIES</h4> -->
+  <?php echo "<p>" . $resumenCorto . "<br>" . $resumen ?>
+  <!-- <p>
     253 lujosas habitaciones, incluyendo 4 suites panorámicas y 5 junior suites.
     <br>
     Todas disponen de baño completo con columna de hidromasaje, secador de pelo y espejo de aumento; teléfono,
     <strong>conexión WIFI </strong>
     gratuita, minibar, televisión digital, aire acondicionado, caja fuerte, carta de almohadas, camas ultima generación látex.
-  </p>
+  </p> -->
 </div> <!-- end resumen-->
 
 <div class ="servicios">
