@@ -71,23 +71,22 @@ class Alojamiento{
 
             echo " <div class =\"info_especifica\">";
             echo "<h1 >";
-            	 echo "HOTEL ".$this->nombre."</br>";
+            	 echo "HOTEL ".$this->nombre."  ";
             	for ($i = 0; $i < $this->estrellas ; $i++)
             		echo "<img src=\"img/star.png\" height=\"20px\" alt=\"estrella\">";
 
 
                 echo "</h1>";
             echo "<p class=\"precio\"> Precio por noche desde ".$this->precio."€ </p>";
-            echo "<p>".$this->direccion;
+            echo "<p> Telefono: ".$this->telefono."</p>";
 
 
             echo "<div id=\"TEST\" onclick=\"closepopup('MAPpopUp')\" style=\"display:none\"></div>";
-            echo "	<a href=\"#\" onClick=\"popup('MAPpopUp',600,450)\">Ver mapa</a>";
+            echo $this->direccion."<a href=\"#\" onClick=\"popup('MAPpopUp',600,450)\">  Ver mapa</a>";
             echo "	<div id=\"MAPpopUp\" onclick=\"closepopup('MAPpopUp')\" style=\"display:block\">";
 
             echo " <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3179.40744621977!2d-3.6062300127280436!3d37.166786949641846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71fc9a732e75a1%3A0x167092f65369d5ab!2sHotel+MA+Nazaries+Business+%26+Spa!5e0!3m2!1ses!2ses!4v1429019598711\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\"></iframe>";
             echo "</div>";
-            echo "</p>";
 
             $valoracion=8;//ahi que leer de la tabla aaloracion
         echo "<p class=\"precio\"> Valoracion".  $valoracion."  </p>";

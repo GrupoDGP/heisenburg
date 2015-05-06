@@ -11,7 +11,7 @@ include "php/includes/dbhandler.php";
 include "php/includes/alojamiento_class.php";
 $dbhandler = new db_handler("localhost","root","heisenburg");
 $alojamiento=leer_alojamiento($idAlojameiento,$dbhandler);
-    $alojamiento->mostrarInformacionAmpliada();
+$alojamiento->mostrarInformacionAmpliada();
 
 
 echo "<div class =\"comenta\">";
@@ -42,24 +42,8 @@ echo "<div id=\"tituloComentarios\"> <h2> Dejanos tu comentario.</h2> </div>";
 
 echo "</div> <!-- end comentarios -->";
 
-echo "<div class =\"comentarios\">";
-echo "<div id=\"tituloComentarios\"> <h2> Comentarios</h2> </div>";
-
-echo "<div class=\"comentario\">";
-    echo "<p> <b>Nombre: </b>   Pijus Magnificus</p>";
-    echo "<p> <b>Valoración: </b>  <img id=\"valoracion4\" src=\"img/valorar/mal.png\" height=\"25px\" width=\"25px\" alt=\"valoracionMala\" title=\"valoracionMala\">  </p>";
-    echo "<p> <b>Lo bueno: </b> Un hotel fantastico.... blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla
-	blablabla blablabla blablabla blablabla blablabla</p>";
-    echo "<p> <b>Lo malo: </b> No me ha gustado el hotel,blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla!!!</p>";
-echo "</div>";
-echo "<div class=\"comentario\">";
-    echo "<p> <b>Nombre: </b>   Gregorio</p>";
-    echo "<p> <b>Valoración: </b>   <img id=\"valoracion4\" src=\"img/valorar/muybien.png\" height=\"25px\" width=\"25px\" alt=\"valoracionMala\" title=\"valoracionMala\"> </p>";
-    echo "<p> <b>Lo bueno: </b> Un hotel fantastico.... blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla
-	blablabla blablabla blablabla blablabla blablabla</p>";
-    echo "<p> <b>Lo malo: </b> No me ha gustado el hotel, blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla blablabla!!!</p>";
-
-echo "</div>";
-echo "</div>";
-
+include "php/includes/comentario_class.php";
+$dbhandler = new db_handler("localhost","root","heisenburg");
+$comentarios=leer_comentarios($idAlojameiento,$dbhandler);
+mostrarComentarios($comentarios);
 ?>
