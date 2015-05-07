@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 04-05-2015 a las 15:44:54
+-- Tiempo de generación: 07-05-2015 a las 12:11:57
 -- Versión del servidor: 5.5.43-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.9
 
@@ -66,11 +66,30 @@ INSERT INTO `alojamientos` (`idAlojamiento`, `nombre`, `tipo`, `precio`, `direcc
 
 CREATE TABLE IF NOT EXISTS `comentario` (
   `idComentario` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `comentario` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `comentarioBueno` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `comentarioMalo` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
   `idAlojamiento` int(10) unsigned NOT NULL,
   PRIMARY KEY (`idComentario`),
   KEY `idAlojamiento` (`idAlojamiento`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=15 ;
+
+--
+-- Volcado de datos para la tabla `comentario`
+--
+
+INSERT INTO `comentario` (`idComentario`, `comentarioBueno`, `comentarioMalo`, `idAlojamiento`) VALUES
+(1, 'Un servicio excelente', 'No tenia buena localizacion', 1),
+(2, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 1),
+(3, 'Un servicio excelente', 'No tenia buena localizacion', 5),
+(4, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 5),
+(5, 'Un servicio excelente', 'No tenia buena localizacion', 6),
+(6, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 6),
+(7, 'Un servicio excelente', 'No tenia buena localizacion', 7),
+(8, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 7),
+(9, 'Un servicio excelente', 'No tenia buena localizacion', 8),
+(10, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 8),
+(11, 'Un servicio excelente', 'No tenia buena localizacion', 9),
+(12, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 9);
 
 -- --------------------------------------------------------
 

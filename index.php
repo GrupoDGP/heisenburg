@@ -12,6 +12,10 @@
 		if(is_numeric ( $_GET['page'] )){//si es un numero que coja la pagina infoAlojamientos
     		$current_page=infoAlojamientos;
 		}
+		else{
+
+			$current_page=$_GET['page'];
+		}
 	}
 	else{
 		$current_page="alojamientos";

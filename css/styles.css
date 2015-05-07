@@ -473,36 +473,16 @@ header{
 	margin-right : 10px;
 	background : #CDDBF0;
 	border-radius : 15px;
-	height : 200px;
-	width: 980px;
-	padding : 5 0;
+	height : 240px;
+	width: 960px;
+	padding : 5px 10px 0px 10px;
+
 }
 
 .comenta textarea {
     resize: none;
 }
 
-
-.comentaBueno{
-	float : left;
-	height : 180px;
-	width : 400px;
-	padding: 0px 10px 0px 10px;
-}
-
-.comentaEnviar{
-	float : left;
-	height : 180px;
-	width : 100px;
-	padding: 0px 30px 0px 10px;
-}
-
-.comentaMalo{
-	float : left;
-	height : 180px;
-	width : 400px;
-	padding: 0px 10px 0px 10px;
-}
 
 .comentarios{
 	margin-left : 10px;
@@ -560,7 +540,7 @@ header{
 }
 
 #tablaformulario td{
-
+    padding: 5px 20px 5px 5px;
 	text-align: center;
 	font-family: plane;
 

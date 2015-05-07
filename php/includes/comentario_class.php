@@ -58,4 +58,37 @@ function leer_comentarios($id,$dbhandler){
     $dbhandler->close();
     return $result;
 }
+
+function mostrarFormularioComentario($idAlojameiento,$dbhandler){
+    echo "<div class =\"comenta\">";
+        echo "<div id=\"tituloComentarios\"> <h2> Dejanos tu comentario.</h2> </div>";
+        echo "<form method=\"post\" action=\"index.php?page=".$idAlojameiento."\">";
+        	echo "<table id=\"tablaformulario\">";
+        		echo "<tr>";
+        			echo "<td><textarea type=\"textarea\" name=\"mensajeBueno\" placeholder=\"Lo que mas te gusto\" rows=\"8\" cols=\"45\" ></textarea>  </td>";
+
+                    echo "<td><a href=\"#\" > <img src=\"img/imgComentario.png\" height=\"100px\" width=\"120px\" alt=\"ImagenComentario\"> </a></td>";
+
+                    echo "<td><textarea type=\"textarea\" name=\"mensajeMalo\" placeholder=\"Lo que menos te gusto\" rows=\"8\" cols=\"45\" ></textarea>  </td>";
+                echo "</tr>";
+                echo "<tr>";
+                    echo "<button type=\"submit\" name=\"submit\">Enviar</button>";
+                echo "</tr>";
+            echo "</table>";
+        echo "</form>";
+
+    echo "</div> <!-- end comenta -->";
+
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $dbhandler->connect();
+        $sql="insert into comentario(comentarioBueno,comentarioMalo,idAlojamiento) values ('$_REQUEST[mensajeBueno]','$_REQUEST[mensajeMalo]','$idAlojameiento')";
+        if ($dbhandler->query($sql) === TRUE) {
+            echo "<script> alert(\"comentario dado de alta\");</script>";
+        } else {
+            echo "Error: ".$dbhandler->error();
+        }
+        $dbhandler->close();
+    }
+}
 ?>
