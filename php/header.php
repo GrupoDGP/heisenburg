@@ -8,13 +8,11 @@
     </div> <!-- end logo -->
 	<?php
 		if(isset($_SESSION['user']) ){
-			
+
 			// Cambiar por boton de cargarse sesion
-			
+
 		}else{
-			
-			include('./php/login.php');
-			
+			include "php/login.php";
 		}
 	?>
     <div class = "busqueda">
