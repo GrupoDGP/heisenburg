@@ -8,6 +8,9 @@
 <script type="text/javascript" src="js/scripts.js"></script>
 
 <?php
+	error_reporting(E_ALL ^ E_DEPRECATED);
+	session_start();
+	include "php/includes/dbhandler.php";
 	if(isset($_GET['page'])){
 		if(is_numeric ( $_GET['page'] )){//si es un numero que coja la pagina infoAlojamientos
     		$current_page=infoAlojamientos;

@@ -1,5 +1,5 @@
 <?php
-include "php/includes/dbhandler.php";
+//include "php/includes/dbhandler.php";
 include "php/includes/alojamiento_class.php";
 $dbhandler = new db_handler("localhost","root","heisenburg");
 $dbhandler->connect();

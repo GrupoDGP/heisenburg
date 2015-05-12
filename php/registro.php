@@ -47,7 +47,7 @@
 
 <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        include "php/includes/dbhandler.php";
+        
         $dbhandler = new db_handler("localhost","root","heisenburg");
         $dbhandler->connect();
         $sql="insert into usuarios(nombre,apellidos, dni, usuario, password, correo, tipo) values ('$_REQUEST[nombre]','$_REQUEST[apellidos]','$_REQUEST[dni]','$_REQUEST[usuario]','$_REQUEST[password]','$_REQUEST[email]','$_REQUEST[tipo]')";

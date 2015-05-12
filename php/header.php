@@ -6,15 +6,17 @@
     <div class = "logo">
         <a href="index.php"><img id = "logo" src = "img/logoheisen.png"/></a>
     </div> <!-- end logo -->
-
-    <div class = "sesion">
-        <form class = "barra_sesion">
-            <input type = "text" id="texto" size ="13" placeholder="Usuario" required>
-            <input type="password" id="texto" size ="13" placeholder="Contraseña" required>
-            <input type="submit" id="submit" value="Enviar">
-        </form>
-    </div> <!-- end sesion -->
-
+	<?php
+		if(isset($_SESSION['user']) ){
+			
+			// Cambiar por boton de cargarse sesion
+			
+		}else{
+			
+			include('./php/login.php');
+			
+		}
+	?>
     <div class = "busqueda">
         <form class = "barra_sesion">
             <input type="text" id="texto" size ="18" placeholder="Buscar..." required>
