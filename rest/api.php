@@ -10,7 +10,7 @@ private function hoteles(){
 		if($this->get_request_method() != "GET"){
 		$this->response('',406);
 	}
-	$respuesta="Hotel Super chulo de la base de datos";
+	$respuesta= array("status" => "Success","msg" => "Hotel Super Chulo");
 	$this->response($this->json($respuesta),200);
 	/*/$id = (int)$this->_request['id']; // _request es rellenado previamente
 	/if($id > 0) {
