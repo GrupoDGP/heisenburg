@@ -44,7 +44,7 @@ function mostrarComentarios($comentarios){
 
 //devuelve todas los alojameintos en un array dada una query
 function leer_comentarios($id,$dbhandler){
-    $dbhandler->connect();
+
     $table=$dbhandler->query("SELECT * FROM `comentario` WHERE `idAlojamiento`=".$id);
     $result=array();
     if ($table->num_rows > 0) {
@@ -55,7 +55,7 @@ function leer_comentarios($id,$dbhandler){
             $result[]=$Comentario;
         }
     }
-    $dbhandler->close();
+
     return $result;
 }
 
@@ -67,7 +67,7 @@ function mostrarFormularioComentario($idAlojameiento,$dbhandler){
         		echo "<tr>";
         			echo "<td><textarea type=\"textarea\" name=\"mensajeBueno\" placeholder=\"Lo que mas te gusto\" rows=\"8\" cols=\"45\" ></textarea>  </td>";
 
-                    echo "<td><a href=\"#\" > <img src=\"img/imgComentario.png\" height=\"100px\" width=\"120px\" alt=\"ImagenComentario\"> </a></td>";
+                    echo "<td><img src=\"img/imgComentario.png\" height=\"100px\" width=\"120px\" alt=\"ImagenComentario\"></td>";
 
                     echo "<td><textarea type=\"textarea\" name=\"mensajeMalo\" placeholder=\"Lo que menos te gusto\" rows=\"8\" cols=\"45\" ></textarea>  </td>";
                 echo "</tr>";
@@ -81,14 +81,14 @@ function mostrarFormularioComentario($idAlojameiento,$dbhandler){
 
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $dbhandler->connect();
+
         $sql="insert into comentario(comentarioBueno,comentarioMalo,idAlojamiento) values ('$_REQUEST[mensajeBueno]','$_REQUEST[mensajeMalo]','$idAlojameiento')";
         if ($dbhandler->query($sql) === TRUE) {
             echo "<script> alert(\"comentario dado de alta\");</script>";
         } else {
             echo "Error: ".$dbhandler->error();
         }
-        $dbhandler->close();
+
     }
 }
 ?>

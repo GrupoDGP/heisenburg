@@ -52,52 +52,53 @@ class Alojamiento{
         echo "</a>";
     }
 
-    public function mostrarInformacionAmpliada(){
+    private function mostrarImagenesRotando(){
+        echo "<div class =\"foto_hotel2\">";
+        echo "<div id=\"slider\">";
+        echo "<div id=\"slidesContainer\">";
+            echo "<div class=\"slide\"><img onload=\"rotar()\" src= \"". $this->imagen1 . "\" width=\"230px\" height=\"200px\" alt=\"Imagen hotel\" title=\"Imagen hotel\"></div> ";
+            echo "<div class=\"slide\"><img onload=\"rotar()\" src= \"". $this->imagen2 . "\" width=\"230px\" height=\"200px\" alt=\"Imagen hotel\" title=\"Imagen hotel\"></div> ";
+            echo "<div class=\"slide\"><img onload=\"rotar()\" src= \"". $this->imagen3 . "\" width=\"230px\" height=\"200px\" alt=\"Imagen hotel\" title=\"Imagen hotel\"></div> ";
+            echo "<div class=\"slide\"><img onload=\"rotar()\" src= \"". $this->imagen4 . "\" width=\"230px\" height=\"200px\" alt=\"Imagen hotel\" title=\"Imagen hotel\"></div> ";
 
-            echo "<div class =\"info_especifica_grupo\">";
+        echo "</div> <!-- /slidesContainer-->";
+        echo "</div> <!-- /slider -->";
+        echo "</div> <!-- end foto_hotel -->";
 
-            echo "<div class =\"foto_hotel2\">";
-            echo "<div id=\"slider\">";
-            echo "<div id=\"slidesContainer\">";
-                echo "<div class=\"slide\"><img onload=\"rotar()\" src= \"". $this->imagen1 . "\" width=\"230px\" height=\"200px\" alt=\"Imagen hotel\" title=\"Imagen hotel\"></div> ";
-                echo "<div class=\"slide\"><img onload=\"rotar()\" src= \"". $this->imagen2 . "\" width=\"230px\" height=\"200px\" alt=\"Imagen hotel\" title=\"Imagen hotel\"></div> ";
-                echo "<div class=\"slide\"><img onload=\"rotar()\" src= \"". $this->imagen3 . "\" width=\"230px\" height=\"200px\" alt=\"Imagen hotel\" title=\"Imagen hotel\"></div> ";
-                echo "<div class=\"slide\"><img onload=\"rotar()\" src= \"". $this->imagen4 . "\" width=\"230px\" height=\"200px\" alt=\"Imagen hotel\" title=\"Imagen hotel\"></div> ";
+    }
 
-            echo "</div> <!-- /slidesContainer-->";
-            echo "</div> <!-- /slider -->";
-            echo "</div> <!-- end foto_hotel -->";
+    private function mostrarMapa(){
+        echo "<div id=\"TEST\" onclick=\"closepopup('MAPpopUp')\" style=\"display:none\"></div>";
+        echo $this->direccion."<a href=\"#\" onClick=\"popup('MAPpopUp',600,450)\">  Ver mapa</a>";
+        echo "	<div id=\"MAPpopUp\" onclick=\"closepopup('MAPpopUp')\" style=\"display:block\">";
+
+        echo " <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3179.40744621977!2d-3.6062300127280436!3d37.166786949641846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71fc9a732e75a1%3A0x167092f65369d5ab!2sHotel+MA+Nazaries+Business+%26+Spa!5e0!3m2!1ses!2ses!4v1429019598711\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\"></iframe>";
+        echo "</div>";
+    }
+
+    private function mostrarValoracion($dbhandler){
+        $valoracion=0;//creamso variable valoracion
+
+        $res=$dbhandler->query("SELECT valor FROM `valoracion` WHERE `idAlojamiento`=".$this->idAlojamiento);
+        if ($res->num_rows > 0){
+            while($row=$res->fetch_assoc()){
+                $valoracion+=$row["valor"];
+            }
+            $valoracion/=$res->num_rows;
+        }
+
+        echo "<p class=\"precio\"> Valoracion ".  $valoracion."  </p>";
+
+    }
 
 
-            echo " <div class =\"info_especifica\">";
-            echo "<h1 >";
-            	 echo "HOTEL ".$this->nombre."  ";
-            	for ($i = 0; $i < $this->estrellas ; $i++)
-            		echo "<img src=\"img/star.png\" height=\"20px\" alt=\"estrella\">";
-
-
-                echo "</h1>";
-            echo "<p class=\"precio\"> Precio por noche desde ".$this->precio."€ </p>";
-            echo "<p> Telefono: ".$this->telefono."</p>";
-
-
-            echo "<div id=\"TEST\" onclick=\"closepopup('MAPpopUp')\" style=\"display:none\"></div>";
-            echo $this->direccion."<a href=\"#\" onClick=\"popup('MAPpopUp',600,450)\">  Ver mapa</a>";
-            echo "	<div id=\"MAPpopUp\" onclick=\"closepopup('MAPpopUp')\" style=\"display:block\">";
-
-            echo " <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3179.40744621977!2d-3.6062300127280436!3d37.166786949641846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd71fc9a732e75a1%3A0x167092f65369d5ab!2sHotel+MA+Nazaries+Business+%26+Spa!5e0!3m2!1ses!2ses!4v1429019598711\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\"></iframe>";
-            echo "</div>";
-
-            $valoracion=8;//ahi que leer de la tabla aaloracion
-        echo "<p class=\"precio\"> Valoracion".  $valoracion."  </p>";
-        echo "</div> <!-- end info_espeficia -->";
-
+    private function valorar(){
 
         echo "<div class =\"valorar\">";
+            //boton para ir atras
+            echo "<a href=\"./index.php\"><div class =\"boton_atras\">ATRAS </div></a>";
 
-        echo "<a href=\"./index.php\"><div class =\"boton_atras\">ATRAS </div></a>";
-
-        echo "<h3> Valorar</h3>";
+            echo "<h3> Valorar</h3>";
             echo "<ul class=\"listaValores\">";
                 echo "<li>";
                     echo "<a href=\"#\"><img id=\"valoracion1\" src=\"img/valorar/muybien.png\" height=\"25px\" width=\"25px\" alt=\"valoracionMuyBuena\" title=\"valoracionMuyBuena\"></a>";
@@ -114,16 +115,9 @@ class Alojamiento{
             echo "</ul>";
 
         echo "</div> <!-- end valorar -->";
-        echo "</div> <!-- end info_espeficia_grupo -->";
+    }
 
-
-
-
-        echo "<div class =\"info_general\">";
-        echo "<div class =\"resumen\">";
-          echo "<h4 >Hotel ". $this->nombre . "</h4>";
-          echo "<p>" . $this->resumen . "<br>";
-        echo "</div> <!-- end resumen-->";
+    private function mostrarServicios(){
 
         echo "<div class =\"servicios\">";
             echo "<h5 > Servios</h5>";
@@ -142,15 +136,39 @@ class Alojamiento{
                 echo "</ul>";
 
         echo "</div> <!-- end servicios-->";
+    }
+
+    public function mostrarInformacionAmpliada($dbhandler){
+
+        echo "<div class =\"info_especifica_grupo\">";
+            $this->mostrarImagenesRotando();
+            echo " <div class =\"info_especifica\">";
+                echo "<h1 >";
+                	 echo "HOTEL ".$this->nombre."  ";
+                	for ($i = 0; $i < $this->estrellas ; $i++)
+                		echo "<img src=\"img/star.png\" height=\"20px\" alt=\"estrella\">";
+                    echo "</h1>";
+                echo "<p class=\"precio\"> Precio por noche desde ".$this->precio."€ </p>";
+                echo "<p> Telefono: ".$this->telefono."</p>";
+
+                $this->mostrarMapa();
+                $this->mostrarValoracion($dbhandler);
+            echo "</div> <!-- end info_espeficia -->";
+            $this->valorar();
+        echo "</div> <!-- end info_espeficia_grupo -->";
+
+        echo "<div class =\"info_general\">";
+        echo "<div class =\"resumen\">";
+          echo "<h4 >Hotel ". $this->nombre . "</h4>";
+          echo "<p>" . $this->resumen . "<br>";
+        echo "</div> <!-- end resumen-->";
+        $this->mostrarServicios();
         echo "</div> <!-- end info_generañ -->";
-
-
     }
 
 }
 //devuelve todas los alojameintos en un array dada una query
 function leer_alojamientos($query,$dbhandler){
-    $dbhandler->connect();
     $table=$dbhandler->query($query);
     $result=array();
     if ($table->num_rows > 0) {
@@ -163,23 +181,19 @@ function leer_alojamientos($query,$dbhandler){
     } else {
         echo "no results";
     }
-    $dbhandler->close();
     return $result;
 }
 
 //devuelve unicamente el hotel de id dado
 function leer_alojamiento($id,$dbhandler){
-    $dbhandler->connect();
     $res=$dbhandler->query("SELECT * FROM `alojamientos` WHERE `idAlojamiento`=".$id);
     if ($res->num_rows > 0){
         $row=$res->fetch_assoc();
         $alojamiento=new Alojamiento;
         $alojamiento->read_hotel($row);
-        $dbhandler->close();
         return $alojamiento;
     }else {
         echo "no results";
-        $dbhandler->close();
         return FALSE;
     }
 }

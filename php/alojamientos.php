@@ -2,6 +2,7 @@
 include "php/includes/dbhandler.php";
 include "php/includes/alojamiento_class.php";
 $dbhandler = new db_handler("localhost","root","heisenburg");
+$dbhandler->connect();
 $query="SELECT * FROM `alojamientos`";
 $alojamientos=leer_alojamientos($query,$dbhandler);
 $size=count($alojamientos);
@@ -17,5 +18,6 @@ for($i = 0; $i<$size; $i++) {
         echo "</div><!-- end hotel_derecha -->";
     }
 }
+$dbhandler->close();
 
 ?>
