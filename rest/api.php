@@ -1,5 +1,6 @@
 <?php
 public function processApi() {
+echo "processing api";
 	$func = strtolower(trim(str_replace("/","",$_REQUEST['rquest'])));
 	if((int)method_exists($this,$func) > 0)
 		$this->$func();
@@ -7,6 +8,7 @@ public function processApi() {
 		$this->response('',404); // Page not Found
 }
 private function hoteles(){
+echo "sending hotels";
 		if($this->get_request_method() != "GET"){
 		$this->response('',406);
 	}

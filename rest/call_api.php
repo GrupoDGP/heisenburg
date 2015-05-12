@@ -1,21 +1,6 @@
 <?php
-$service_url = 'localhost/heisenburg/rest/hoteles/';
-       $curl = curl_init($service_url);
-       $curl_post_data = array(
-            "user_id" => 42,
-            "emailaddress" => 'lorna@example.com',
-            );
-       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-       curl_setopt($curl, CURLOPT_POST, true);
-       curl_setopt($curl, CURLOPT_POSTFIELDS, $curl_post_data);
-       $curl_response = curl_exec($curl);
-       curl_close($curl);
- 
-       $xml = new SimpleXMLElement($curl_response);
-       
-       /////////
-       //next example will recieve all messages for specific conversation
-//$service_url = 'http://example.com/api/conversations/[CONV_CODE]/messages&apikey=[API_KEY]';
+  //next example will recieve all messages for specific conversation
+  //example from https://support.ladesk.com/061754-How-to-make-REST-calls-in-PHP
 $service_url = 'localhost/heisenburg/rest/hoteles/';
 $curl = curl_init($service_url);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
@@ -28,10 +13,11 @@ if ($curl_response === false) {
 curl_close($curl);
 $decoded = json_decode($curl_response);
 if (isset($decoded->response->status) && $decoded->response->status == 'ERROR') {
+die('error');
    // die('error occured: ' . $decoded->response->errormessage);
 }
 echo 'response ok!';
-echo $decoded->response->msg;
+echo $decoded->response;
 echo 'export:';
 var_export($decoded->response);
 
