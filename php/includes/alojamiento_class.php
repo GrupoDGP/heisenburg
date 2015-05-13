@@ -93,7 +93,6 @@ class Alojamiento{
 
 
     private function valorar(){
-
         echo "<div class =\"valorar\">";
             //boton para ir atras
             echo "<a href=\"./index.php\"><div class =\"boton_atras\">ATRAS </div></a>";
@@ -101,16 +100,16 @@ class Alojamiento{
             echo "<h3> Valorar</h3>";
             echo "<ul class=\"listaValores\">";
                 echo "<li>";
-                    echo "<a href=\"#\"><img id=\"valoracion1\" src=\"img/valorar/muybien.png\" height=\"25px\" width=\"25px\" alt=\"valoracionMuyBuena\" title=\"valoracionMuyBuena\"></a>";
+                    echo "<img  onclick=\"valorar(10,".$this->idAlojamiento.")\"  src=\"img/valorar/muybien.png\" height=\"25px\" width=\"25px\" alt=\"valoracionMuyBuena\" title=\"valoracionMuyBuena\" >";
                     echo "</li>";
                 echo "<li>";
-                    echo "<a href=\"#\"><img id=\"valoracion2\" src=\"img/valorar/bien.png\" height=\"25px\" width=\"25px\" alt=\"valoracionBuena\" title=\"valoracionBuena\"></a>";
+                    echo "<img onclick=\"valorar(7,".$this->idAlojamiento.")\"  src=\"img/valorar/bien.png\" height=\"25px\" width=\"25px\" alt=\"valoracionBuena\" title=\"valoracionBuena\">";
                 echo "</li>";
                 echo "<li>";
-                    echo "<a href=\"#\"><img id=\"valoracion3\" src=\"img/valorar/regular.png\" height=\"25px\" width=\"25px\" alt=\"valoracionRegular\" title=\"valoracionRegular\"></a>";
+                    echo "<img onclick=\"valorar(4,".$this->idAlojamiento.")\"  src=\"img/valorar/regular.png\" height=\"25px\" width=\"25px\" alt=\"valoracionRegular\" title=\"valoracionRegular\">";
                 echo "</li>";
                 echo "<li>";
-                    echo "<a href=\"#\"><img id=\"valoracion4\" src=\"img/valorar/mal.png\" height=\"25px\" width=\"25px\" alt=\"valoracionMala\" title=\"valoracionMala\"></a>";
+                    echo "<img onclick=\"valorar(1,".$this->idAlojamiento.")\"  src=\"img/valorar/mal.png\" height=\"25px\" width=\"25px\" alt=\"valoracionMala\" title=\"valoracionMala\">";
                 echo "</li>";
             echo "</ul>";
 

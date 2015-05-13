@@ -1,3 +1,20 @@
+//funcion que le pasamos una valoracion y un identificador de hotel
+//a partir de una llamada ajax, accede al servidor y almacena ese valor en la base de datos de forma dinamica.
+function valorar(n,id) {
+	var xmlhttp;
+	xmlhttp=new XMLHttpRequest();
+	xmlhttp.onreadystatechange=function(){
+			if (xmlhttp.readyState==4 && xmlhttp.status==200){
+			window.alert(xmlhttp.responseText);
+		}
+	}
+	xmlhttp.open("POST","php/includes/valorar.php",true);
+	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xmlhttp.send("valor="+n+"&idAlojamiento="+id);//enviamos el valor y el id del alojamiento.
+}
+
+
+
 function toggle( div_id ) {
 
 	var el = document.getElementById(div_id);
@@ -96,7 +113,7 @@ function rotar(){
 			pausecomp(1000);
 		}
 		//movemos scroll
-		
+
 		if(incremento>=totalWidth){//si es el final del scroll -> volvmeos a empezar
 			slider.scrollLeft=0;
 		}
