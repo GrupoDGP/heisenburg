@@ -6,6 +6,7 @@ class Comentario{
     private $idComentario;
     private $comentarioBueno;
     private $comentarioMalo;
+    private $usuario;
 
 
     //se le pasa una "row" del query
@@ -14,6 +15,7 @@ class Comentario{
         $this->idComentario=$row["idComentario"];
         $this->comentarioBueno=$row["comentarioBueno"];
         $this->comentarioMalo=$row["comentarioMalo"];
+        $this->usuario=$row["usuario"];
     }
 
     public function mostrarcomentarioBueno(){
@@ -21,6 +23,10 @@ class Comentario{
     }
     public function mostrarcomentarioMalo(){
         echo "<p> <img id=\"valoracion4\" src=\"img/valorar/mal.png\" height=\"20px\" width=\"20px\" alt=\"comentarioMala\" title=\"comentarioMala\"><b>  Lo malo: </b> ".$this->comentarioMalo."</p>";
+    }
+
+    public function mostrarUsuario(){
+        echo "<p> <b>Nombre: </b>".$this->usuario."</p>";
     }
 }
 
@@ -32,7 +38,7 @@ function mostrarComentarios($comentarios){
         echo "<div id=\"tituloComentarios\"> <h2> Comentarios</h2> </div>";
         for($i = 0; $i<$size; $i++) {
             echo "<div class=\"comentario\">";
-                echo "<p> <b>Nombre: </b>   Anonimo</p>";//poner usuaro de la sesion //TODO
+                $comentarios[$i]->mostrarUsuario();
                 $comentarios[$i]->mostrarcomentarioBueno();
                 $comentarios[$i]->mostrarcomentarioMalo();
             echo "</div>";
