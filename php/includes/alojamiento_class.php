@@ -86,7 +86,7 @@ class Alojamiento{
             }
             $valoracion/=$res->num_rows;
         }
-
+        $valoracion=round($valoracion, 1);    //redonde con un solo decimal
         echo "<p class=\"precio\"> Valoracion ".  $valoracion."  </p>";
 
     }
