@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 07-05-2015 a las 12:11:57
+-- Tiempo de generación: 13-05-2015 a las 12:38:36
 -- Versión del servidor: 5.5.43-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.9
 
@@ -69,27 +69,29 @@ CREATE TABLE IF NOT EXISTS `comentario` (
   `comentarioBueno` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
   `comentarioMalo` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
   `idAlojamiento` int(10) unsigned NOT NULL,
+  `usuario` varchar(30) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`idComentario`),
+  KEY `usuario` (`usuario`),
   KEY `idAlojamiento` (`idAlojamiento`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=13 ;
 
 --
 -- Volcado de datos para la tabla `comentario`
 --
 
-INSERT INTO `comentario` (`idComentario`, `comentarioBueno`, `comentarioMalo`, `idAlojamiento`) VALUES
-(1, 'Un servicio excelente', 'No tenia buena localizacion', 1),
-(2, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 1),
-(3, 'Un servicio excelente', 'No tenia buena localizacion', 5),
-(4, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 5),
-(5, 'Un servicio excelente', 'No tenia buena localizacion', 6),
-(6, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 6),
-(7, 'Un servicio excelente', 'No tenia buena localizacion', 7),
-(8, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 7),
-(9, 'Un servicio excelente', 'No tenia buena localizacion', 8),
-(10, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 8),
-(11, 'Un servicio excelente', 'No tenia buena localizacion', 9),
-(12, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 9);
+INSERT INTO `comentario` (`idComentario`, `comentarioBueno`, `comentarioMalo`, `idAlojamiento`,`usuario`) VALUES
+(1, 'Un servicio excelente', 'No tenia buena localizacion', 1,'antonio'),
+(2, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 1,'antonio'),
+(3, 'Un servicio excelente', 'No tenia buena localizacion', 5,'antonio'),
+(4, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 5,'antonio'),
+(5, 'Un servicio excelente', 'No tenia buena localizacion', 6,'antonio'),
+(6, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 6,'antonio'),
+(7, 'Un servicio excelente', 'No tenia buena localizacion', 7,'antonio'),
+(8, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 7,'antonio'),
+(9, 'Un servicio excelente', 'No tenia buena localizacion', 8,'antonio'),
+(10, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 8,'antonio'),
+(11, 'Un servicio excelente', 'No tenia buena localizacion', 9,'antonio'),
+(12, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 9,'antonio');
 
 -- --------------------------------------------------------
 
@@ -162,6 +164,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `correo` varchar(40) COLLATE utf8_spanish_ci NOT NULL,
   `tipo` varchar(11) COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`idUsuario`),
+  KEY `usuario` (`usuario`),
   KEY `dni` (`dni`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=3 ;
 
@@ -184,7 +187,49 @@ CREATE TABLE IF NOT EXISTS `valoracion` (
   `idAlojamiento` int(10) unsigned NOT NULL,
   PRIMARY KEY (`idValoracion`),
   KEY `idAlojamiento` (`idAlojamiento`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=43 ;
+
+--
+-- Volcado de datos para la tabla `valoracion`
+--
+
+INSERT INTO `valoracion` (`idValoracion`, `valor`, `idAlojamiento`) VALUES
+(6, 10, 1),
+(7, 5, 1),
+(8, 7, 1),
+(9, 6, 1),
+(10, 2, 1),
+(11, 9, 5),
+(12, 5, 5),
+(13, 7, 5),
+(14, 6, 5),
+(15, 2, 5),
+(16, 10, 6),
+(17, 5, 6),
+(18, 7, 6),
+(19, 6, 6),
+(20, 2, 6),
+(21, 9, 7),
+(22, 5, 7),
+(23, 7, 7),
+(24, 6, 7),
+(25, 2, 7),
+(26, 9, 8),
+(27, 5, 8),
+(28, 7, 8),
+(29, 6, 8),
+(30, 2, 8),
+(31, 9, 9),
+(32, 5, 9),
+(33, 7, 9),
+(34, 6, 9),
+(35, 2, 9),
+(36, 10, 1),
+(37, 10, 1),
+(39, 10, 1),
+(40, 4, 1),
+(41, 7, 6),
+(42, 4, 6);
 
 --
 -- Restricciones para tablas volcadas
@@ -194,7 +239,9 @@ CREATE TABLE IF NOT EXISTS `valoracion` (
 -- Filtros para la tabla `comentario`
 --
 ALTER TABLE `comentario`
-  ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`idAlojamiento`) REFERENCES `alojamientos` (`idAlojamiento`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `comentario_ibfk_2` FOREIGN KEY (`idAlojamiento`) REFERENCES `alojamientos` (`idAlojamiento`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 
 --
 -- Filtros para la tabla `factura`
