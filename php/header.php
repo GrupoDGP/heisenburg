@@ -8,8 +8,8 @@
     </div> <!-- end logo -->
 	<?php
 		if(isset($_SESSION['user']) ){
-
-			// Cambiar por boton de cargarse sesion
+			
+			echo '<a href="index.php?salir"><div class ="sesion" >Salir</div></a>';
 
 		}else{
 			include "php/login.php";
