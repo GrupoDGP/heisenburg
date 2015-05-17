@@ -44,8 +44,26 @@
 
 	<!-- submenu de categorias de hoteles-->
 	<div class = "menu">
-		<a href="index.php?page=registro"><li id="boton_registro">¡REGISTRATE!</li></a>
-        <a href="index.php?page=addhotel"><li id="boton_registro">¡AGREGAR HOTEL!</li></a>
+    	<?php
+        
+			if(!isset($_SESSION['user']) )
+				echo '<a href="index.php?page=registro"><li id="boton_registro">¡REGISTRATE!</li></a>';
+        
+        
+        	
+			if(isset($_SESSION['user']) ){
+				$user=$_SESSION['user'];
+			
+				$dbhandler = new db_handler("localhost","root","heisenburg");
+				$tipo="select tipo from `usuarios` where `usuario`='".$user."' and tipo='Hostelero'";
+				$dbhandler->connect();
+				$consulta=$dbhandler->query($tipo);
+				
+				if( $consulta->num_rows > 0 )
+					echo '<a href="index.php?page=addhotel"><li id="boton_registro">¡AGREGAR HOTEL!</li></a>';
+	
+			}
+		?>
 	</div>
 
 </header>
