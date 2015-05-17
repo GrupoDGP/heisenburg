@@ -556,3 +556,28 @@ td#submit{
     text-decoration: none;
     color:inherit;
 }
+
+#boton_salir{
+	
+	border: 1px solid black;
+	float: right;
+	width: 300px;
+	height: 20px;
+	text-align: center;
+	background-color: #0483a0;
+	font: 16px plane;
+	text-decoration: none;
+	border-radius : 4px;
+	padding: 10px;
+	margin-right: 46px;
+	margin-top: 11px;
+	cursor: pointer;
+	color: #fafafa;
+	
+}
+
+#boton_salir:hover{
+	
+	background-color: #31b2c3;
+	
+}

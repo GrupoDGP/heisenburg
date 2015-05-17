@@ -9,7 +9,7 @@
 	<?php
 		if(isset($_SESSION['user']) ){
 			
-			echo '<a href="index.php?salir"><div class ="sesion" >Salir</div></a>';
+			echo '<a href="index.php?salir"><div id = "boton_salir">CERRAR SESION</div></a>';
 
 		}else{
 			include "php/login.php";
