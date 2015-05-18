@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 13-05-2015 a las 12:38:36
+-- Tiempo de generación: 18-05-2015 a las 11:33:11
 -- Versión del servidor: 5.5.43-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.9
 
@@ -79,19 +79,19 @@ CREATE TABLE IF NOT EXISTS `comentario` (
 -- Volcado de datos para la tabla `comentario`
 --
 
-INSERT INTO `comentario` (`idComentario`, `comentarioBueno`, `comentarioMalo`, `idAlojamiento`,`usuario`) VALUES
-(1, 'Un servicio excelente', 'No tenia buena localizacion', 1,'antonio'),
-(2, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 1,'antonio'),
-(3, 'Un servicio excelente', 'No tenia buena localizacion', 5,'antonio'),
-(4, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 5,'antonio'),
-(5, 'Un servicio excelente', 'No tenia buena localizacion', 6,'antonio'),
-(6, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 6,'antonio'),
-(7, 'Un servicio excelente', 'No tenia buena localizacion', 7,'antonio'),
-(8, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 7,'antonio'),
-(9, 'Un servicio excelente', 'No tenia buena localizacion', 8,'antonio'),
-(10, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 8,'antonio'),
-(11, 'Un servicio excelente', 'No tenia buena localizacion', 9,'antonio'),
-(12, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 9,'antonio');
+INSERT INTO `comentario` (`idComentario`, `comentarioBueno`, `comentarioMalo`, `idAlojamiento`, `usuario`) VALUES
+(1, 'Un servicio excelente', 'No tenia buena localizacion', 1, 'antonio'),
+(2, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 1, 'antonio'),
+(3, 'Un servicio excelente', 'No tenia buena localizacion', 5, 'antonio'),
+(4, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 5, 'antonio'),
+(5, 'Un servicio excelente', 'No tenia buena localizacion', 6, 'antonio'),
+(6, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 6, 'antonio'),
+(7, 'Un servicio excelente', 'No tenia buena localizacion', 7, 'antonio'),
+(8, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 7, 'antonio'),
+(9, 'Un servicio excelente', 'No tenia buena localizacion', 8, 'antonio'),
+(10, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 8, 'antonio'),
+(11, 'Un servicio excelente', 'No tenia buena localizacion', 9, 'antonio'),
+(12, 'habitaciones muy amplias', 'No haiba buffet libre en el desayuno', 9, 'antonio');
 
 -- --------------------------------------------------------
 
@@ -120,11 +120,8 @@ CREATE TABLE IF NOT EXISTS `factura` (
 
 CREATE TABLE IF NOT EXISTS `habitacion` (
   `idHabitacion` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `tipo` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `camaSupletoria` int(11) DEFAULT NULL,
-  `estado` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `categoria` varchar(255) COLLATE utf8_spanish_ci DEFAULT NULL,
-  `tarifa` float DEFAULT NULL,
+  `tipo_hab` varchar(255) COLLATE utf8_spanish_ci NOT NULL,
+  `precio` float DEFAULT NULL,
   `idAlojamiento` int(10) unsigned NOT NULL,
   PRIMARY KEY (`idHabitacion`),
   KEY `idAlojamiento` (`idAlojamiento`)
@@ -241,7 +238,6 @@ INSERT INTO `valoracion` (`idValoracion`, `valor`, `idAlojamiento`) VALUES
 ALTER TABLE `comentario`
   ADD CONSTRAINT `comentario_ibfk_1` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `comentario_ibfk_2` FOREIGN KEY (`idAlojamiento`) REFERENCES `alojamientos` (`idAlojamiento`) ON DELETE CASCADE ON UPDATE CASCADE;
-
 
 --
 -- Filtros para la tabla `factura`

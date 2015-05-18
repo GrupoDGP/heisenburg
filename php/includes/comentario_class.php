@@ -89,7 +89,7 @@ function mostrarFormularioComentario($idAlojameiento,$dbhandler){
     if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 
         if(isset($_SESSION['user'])){
-            $sql="insert into comentario(comentarioBueno,comentarioMalo,idAlojamiento) values ('$_REQUEST[mensajeBueno]','$_REQUEST[mensajeMalo]','$idAlojameiento')";
+            $sql="insert into comentario(comentarioBueno,comentarioMalo,idAlojamiento,usuario) values ('$_REQUEST[mensajeBueno]','$_REQUEST[mensajeMalo]','$idAlojameiento','$_SESSION[user]')";
             if ($dbhandler->query($sql) === TRUE) {
                 echo "<script> alert(\"comentario dado de alta\");</script>";
             } else {
