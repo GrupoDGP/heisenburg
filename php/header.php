@@ -21,7 +21,7 @@
     <div class = "busqueda">
         <form class = "barra_sesion" action="index.php?page=busqueda" method="post">
             <!-- <input type="text" id="texto" size ="18" placeholder="Buscar..." required>-->
-            <input type="text" name="precio" id="texto" size ="11" placeholder="Precio">
+            <input type="text" name="precio" value=100 id="texto" size ="11" placeholder="Precio">
             <input type="date" name="fecha_entrada" id="texto" size ="13" placeholder="Fecha entrada" min="2015-01-01" max="2016-01-01" value="<?php echo date("Y-m-d");?>">
             <input type="date" name="fecha_salida" id="texto" size ="13" placeholder="Fecha salida" min="2015-01-01" max="2016-01-01" value="<?php echo date("Y-m-d",strtotime("+1 day"));?>">
             <select name="tipohab" id="desplegable">>
@@ -40,7 +40,7 @@
             </div>
             <div id = "boton_busqueda">
                 <label>
-                	<input type="checkbox" name="casa_rural" value="casa_rural" ><span>CASAS RURALES</span>
+                	<input type="checkbox" name="casa" value="casa" ><span>CASAS RURALES</span>
         		</label>
             </div>
         </form>

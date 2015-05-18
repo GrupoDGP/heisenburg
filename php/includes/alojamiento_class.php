@@ -61,7 +61,7 @@ class Alojamiento{
             echo "<div class=\"slide\"><img src= \"". $this->imagen3 . "\" width=\"230px\" height=\"200px\" alt=\"Imagen hotel\" title=\"Imagen hotel\"></div> ";
             echo "<div class=\"slide\"><img src= \"". $this->imagen4 . "\" width=\"230px\" height=\"200px\" alt=\"Imagen hotel\" title=\"Imagen hotel\"></div> ";
 			echo "<div class=\"slide\"><img src= \"". $this->imagen1 . "\" width=\"230px\" height=\"200px\" alt=\"Imagen hotel\" title=\"Imagen hotel\"></div> ";
-			
+
         echo "</div> <!-- /slidesContainer-->";
         echo "</div> <!-- /slider -->";
         echo "</div> <!-- end foto_hotel -->";
@@ -138,13 +138,23 @@ class Alojamiento{
         echo "</div> <!-- end servicios-->";
     }
 
+    private function mostrarNombre(){
+        if($this->tipo=="hotel"){
+            echo "HOTEL ".$this->nombre."  ";
+        }
+        else{//$this->tipo=="casa"
+            echo "CASA ".$this->nombre."  ";
+        }
+
+    }
+
     public function mostrarInformacionAmpliada($dbhandler){
 
         echo "<div class =\"info_especifica_grupo\">";
             $this->mostrarImagenesRotando();
             echo " <div class =\"info_especifica\">";
                 echo "<h1 >";
-                	 echo "HOTEL ".$this->nombre."  ";
+                    $this->mostrarNombre();
                 	for ($i = 0; $i < $this->estrellas ; $i++)
                 		echo "<img src=\"img/star.png\" height=\"20px\" alt=\"estrella\">";
                     echo "</h1>";
@@ -201,24 +211,11 @@ function leer_alojamiento($id,$dbhandler){
 function comprobar_disponibilidad($fecha_entrada,$fecha_salida,$idHabitacion,$dbhandler){
     //compruba si dicha habiatacion esta reservada actualmente
     $disponible= true;
-            /*$query="SELECT * from reserva";
-            $table=$dbhandler->query($query);
-            if ($table->num_rows > 0) {
-                // output data of each row
-                while($row = $table->fetch_assoc()) {
 
-                    echo "fecha_entrada ".$row["fecha_entrada"]."</br>";
-                    echo "fecha_salida ".$row["fecha_salida"]."</br>";
-                }
-            } else {
-                echo "no results";
-            }
-            */
-    //$query="SELECT * from reserva where idHabitacion=".$idHabitacion." AND fecha_salida>".$fecha_salida;
-    $query="SELECT * from reserva where idHabitacion=".$idHabitacion;
+    $query="SELECT * from reserva where idHabitacion=".$idHabitacion." AND ( (fecha_entrada<='".$fecha_entrada."' AND fecha_salida>='".$fecha_entrada."' ) OR (fecha_entrada>='".$fecha_entrada."' AND fecha_salida>='".$fecha_salida."' AND fecha_entrada<='".$fecha_salida."')                                        OR (fecha_entrada<='".$fecha_entrada."' AND fecha_salida<='".$fecha_salida."' AND fecha_salida>='".$fecha_entrada."')                                    )";
     $table=$dbhandler->query($query);
     if ($table->num_rows > 0) {
-        $disponible= false;
+        $disponible= false;//no esta disponible
     }
     return $disponible;
 }
