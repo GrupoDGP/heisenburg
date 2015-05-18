@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 18-05-2015 a las 11:33:11
+-- Tiempo de generación: 18-05-2015 a las 11:37:22
 -- Versión del servidor: 5.5.43-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.9
 
@@ -125,7 +125,19 @@ CREATE TABLE IF NOT EXISTS `habitacion` (
   `idAlojamiento` int(10) unsigned NOT NULL,
   PRIMARY KEY (`idHabitacion`),
   KEY `idAlojamiento` (`idAlojamiento`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=7 ;
+
+--
+-- Volcado de datos para la tabla `habitacion`
+--
+
+INSERT INTO `habitacion` (`idHabitacion`, `tipo_hab`, `precio`, `idAlojamiento`) VALUES
+(1, '1', 80, 1),
+(2, '2', 90, 1),
+(3, '1', 80, 5),
+(4, '2', 90, 5),
+(5, '1', 100, 6),
+(6, '2', 130, 6);
 
 -- --------------------------------------------------------
 

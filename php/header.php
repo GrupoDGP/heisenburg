@@ -19,7 +19,7 @@
 
 
     <div class = "busqueda">
-        <form class = "barra_sesion">
+        <form class = "barra_sesion" action="index.php?page=busqueda" method="post">
             <!-- <input type="text" id="texto" size ="18" placeholder="Buscar..." required>-->
             <input type="text" name="precio" id="texto" size ="11" placeholder="Precio">
             <input type="date" name="fecha_entrada" id="texto" size ="13" placeholder="Fecha entrada" min="2015-01-01" max="2016-01-01" value="<?php echo date("Y-m-d");?>">
@@ -35,12 +35,12 @@
             <br>
             <div id = "boton_busqueda">
                 <label>
-                    <input type="checkbox" name="hotel"><span>HOTELES</span>
+                    <input type="checkbox" name="hotel" value="hotel"><span>HOTELES</span>
                 </label>
             </div>
             <div id = "boton_busqueda">
                 <label>
-                	<input type="checkbox" name="casa_rural"><span>CASAS RURALES</span>
+                	<input type="checkbox" name="casa_rural" value="casa_rural" ><span>CASAS RURALES</span>
         		</label>
             </div>
         </form>
@@ -50,11 +50,9 @@
 	<div class = "menu">
     	<?php
 
-			if(!isset($_SESSION['user']) )
+			if(!isset($_SESSION['user']) ){
 				echo '<a href="index.php?page=registro"><li id="boton_registro">¡REGISTRATE!</li></a>';
-
-
-
+            }
 			if(isset($_SESSION['user']) ){
 				$user=$_SESSION['user'];
 
@@ -65,7 +63,6 @@
 
 				if( $consulta->num_rows > 0 )
 					echo '<a href="index.php?page=addhotel"><li id="boton_registro">¡AGREGAR HOTEL!</li></a>';
-
 			}
 		?>
 	</div>

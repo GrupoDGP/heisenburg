@@ -196,4 +196,24 @@ function leer_alojamiento($id,$dbhandler){
         return FALSE;
     }
 }
+
+
+//devuelve todas los alojameintos en un array respecto un tipo de habitacion y un precio
+function buscar_alojamientos($precio,$tipo_hab,$tipo_Alojamiento,$dbhandler){
+    $query="SELECT alojamientos.* FROM alojamientos, habitacion WHERE habitacion.idAlojamiento=alojamientos.idAlojamiento AND habitacion.tipo_hab=".$tipo_hab." AND alojamientos.tipo='".$tipo_Alojamiento."' AND alojamientos.precio<=".$precio;
+
+    $table=$dbhandler->query($query);
+    $result=array();
+    if ($table->num_rows > 0) {
+        // output data of each row
+        while($row = $table->fetch_assoc()) {
+            $alojamiento=new Alojamiento;
+            $alojamiento->read_hotel($row);
+            $result[]=$alojamiento;
+        }
+    } else {
+        echo "no results";
+    }
+    return $result;
+}
 ?>
