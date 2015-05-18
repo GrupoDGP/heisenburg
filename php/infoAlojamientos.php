@@ -14,7 +14,10 @@ $alojamiento=leer_alojamiento($idAlojameiento,$dbhandler);
 $alojamiento->mostrarInformacionAmpliada($dbhandler);
 
 include "./php/includes/comentario_class.php";
-mostrarFormularioComentario($idAlojameiento,$dbhandler);
+
+if( isset($_SESSION['user'] ) )
+	mostrarFormularioComentario($idAlojameiento,$dbhandler);
+
 $comentarios=leer_comentarios($idAlojameiento,$dbhandler);
 mostrarComentarios($comentarios);
 $dbhandler->close();
