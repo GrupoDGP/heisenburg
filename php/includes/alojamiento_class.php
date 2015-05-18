@@ -57,10 +57,11 @@ class Alojamiento{
         echo "<div id=\"slider\">";
         echo "<div id=\"slidesContainer\">";
             echo "<div class=\"slide\"><img onload=\"rotar()\" src= \"". $this->imagen1 . "\" width=\"230px\" height=\"200px\" alt=\"Imagen hotel\" title=\"Imagen hotel\"></div> ";
-            echo "<div class=\"slide\"><img onload=\"rotar()\" src= \"". $this->imagen2 . "\" width=\"230px\" height=\"200px\" alt=\"Imagen hotel\" title=\"Imagen hotel\"></div> ";
-            echo "<div class=\"slide\"><img onload=\"rotar()\" src= \"". $this->imagen3 . "\" width=\"230px\" height=\"200px\" alt=\"Imagen hotel\" title=\"Imagen hotel\"></div> ";
-            echo "<div class=\"slide\"><img onload=\"rotar()\" src= \"". $this->imagen4 . "\" width=\"230px\" height=\"200px\" alt=\"Imagen hotel\" title=\"Imagen hotel\"></div> ";
-
+            echo "<div class=\"slide\"><img src= \"". $this->imagen2 . "\" width=\"230px\" height=\"200px\" alt=\"Imagen hotel\" title=\"Imagen hotel\"></div> ";
+            echo "<div class=\"slide\"><img src= \"". $this->imagen3 . "\" width=\"230px\" height=\"200px\" alt=\"Imagen hotel\" title=\"Imagen hotel\"></div> ";
+            echo "<div class=\"slide\"><img src= \"". $this->imagen4 . "\" width=\"230px\" height=\"200px\" alt=\"Imagen hotel\" title=\"Imagen hotel\"></div> ";
+			echo "<div class=\"slide\"><img src= \"". $this->imagen1 . "\" width=\"230px\" height=\"200px\" alt=\"Imagen hotel\" title=\"Imagen hotel\"></div> ";
+			
         echo "</div> <!-- /slidesContainer-->";
         echo "</div> <!-- /slider -->";
         echo "</div> <!-- end foto_hotel -->";
