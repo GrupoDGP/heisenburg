@@ -196,11 +196,36 @@ function leer_alojamiento($id,$dbhandler){
         return FALSE;
     }
 }
+//devuevle true si la habitacion con id esta libre entre fecha llegada y salida
+function comprobar_disponibilidad($fecha_entrada,$fecha_salida,$idHabitacion,$dbhandler){
+    //compruba si dicha habiatacion esta reservada actualmente
+    $disponible= true;
+            /*$query="SELECT * from reserva";
+            $table=$dbhandler->query($query);
+            if ($table->num_rows > 0) {
+                // output data of each row
+                while($row = $table->fetch_assoc()) {
 
+                    echo "fecha_entrada ".$row["fecha_entrada"]."</br>";
+                    echo "fecha_salida ".$row["fecha_salida"]."</br>";
+                }
+            } else {
+                echo "no results";
+            }
+            */
+    //$query="SELECT * from reserva where idHabitacion=".$idHabitacion." AND fecha_salida>".$fecha_salida;
+    $query="SELECT * from reserva where idHabitacion=".$idHabitacion;
+    $table=$dbhandler->query($query);
+    if ($table->num_rows > 0) {
+        echo "hola";
+        $disponible= false;
+    }
+    return $disponible;
+}
 
 //devuelve todas los alojameintos en un array respecto un tipo de habitacion y un precio
-function buscar_alojamientos($precio,$tipo_hab,$tipo_Alojamiento,$dbhandler){
-    $query="SELECT alojamientos.* FROM alojamientos, habitacion WHERE habitacion.idAlojamiento=alojamientos.idAlojamiento AND habitacion.tipo_hab=".$tipo_hab." AND alojamientos.tipo='".$tipo_Alojamiento."' AND alojamientos.precio<=".$precio;
+function buscar_alojamientos($precio,$tipo_hab,$tipo_Alojamiento,$dbhandler,$fecha_entrada,$fecha_salida){
+    $query="SELECT alojamientos.*, habitacion.idHabitacion FROM alojamientos, habitacion WHERE habitacion.idAlojamiento=alojamientos.idAlojamiento AND habitacion.tipo_hab=".$tipo_hab." AND alojamientos.tipo='".$tipo_Alojamiento."' AND alojamientos.precio<=".$precio;
 
     $table=$dbhandler->query($query);
     $result=array();
@@ -209,7 +234,12 @@ function buscar_alojamientos($precio,$tipo_hab,$tipo_Alojamiento,$dbhandler){
         while($row = $table->fetch_assoc()) {
             $alojamiento=new Alojamiento;
             $alojamiento->read_hotel($row);
-            $result[]=$alojamiento;
+            echo "idhabitacion ".$row["idHabitacion"];
+            //echo "fecha_entrada ".$fecha_entrada;
+            //echo "fecha_salida ".$fecha_salida;
+            if(comprobar_disponibilidad($fecha_entrada,$fecha_salida,$row["idHabitacion"],$dbhandler)){
+                $result[]=$alojamiento;//si esta disponible la mostramos
+            }
         }
     } else {
         echo "no results";
