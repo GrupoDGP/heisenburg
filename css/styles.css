@@ -515,7 +515,8 @@ header{
 }
 
 #boton_registro{
-
+	
+	font-size:14px;
 	background-color: #0483a0;
 	color: white;
 

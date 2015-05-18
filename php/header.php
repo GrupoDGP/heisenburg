@@ -61,8 +61,10 @@
 				$dbhandler->connect();
 				$consulta=$dbhandler->query($tipo);
 
-				if( $consulta->num_rows > 0 )
+				if( $consulta->num_rows > 0 ){
+					echo '<a href="index.php?page=addhabitacion"><li id="boton_registro">¡AGREGAR HABITACION!</li></a>';
 					echo '<a href="index.php?page=addhotel"><li id="boton_registro">¡AGREGAR HOTEL!</li></a>';
+				}
 			}
 		?>
 	</div>
