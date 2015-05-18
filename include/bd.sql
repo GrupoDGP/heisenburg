@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 18-05-2015 a las 11:37:22
+-- Tiempo de generación: 18-05-2015 a las 13:38:05
 -- Versión del servidor: 5.5.43-0ubuntu0.14.04.1
 -- Versión de PHP: 5.5.9-1ubuntu4.9
 
@@ -155,7 +155,15 @@ CREATE TABLE IF NOT EXISTS `reserva` (
   PRIMARY KEY (`idReserva`),
   KEY `dni` (`dni`),
   KEY `idHabitacion` (`idHabitacion`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `reserva`
+--
+
+INSERT INTO `reserva` (`idReserva`, `fecha_entrada`, `fecha_salida`, `precio`, `dni`, `idHabitacion`) VALUES
+(1, '2015-05-17', '2015-05-23', 200, '12345678o', 2),
+(2, '2015-05-17', '2015-05-23', 300, '12345678o', 1);
 
 -- --------------------------------------------------------
 

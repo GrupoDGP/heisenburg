@@ -217,7 +217,6 @@ function comprobar_disponibilidad($fecha_entrada,$fecha_salida,$idHabitacion,$db
     $query="SELECT * from reserva where idHabitacion=".$idHabitacion;
     $table=$dbhandler->query($query);
     if ($table->num_rows > 0) {
-        echo "hola";
         $disponible= false;
     }
     return $disponible;
@@ -234,7 +233,7 @@ function buscar_alojamientos($precio,$tipo_hab,$tipo_Alojamiento,$dbhandler,$fec
         while($row = $table->fetch_assoc()) {
             $alojamiento=new Alojamiento;
             $alojamiento->read_hotel($row);
-            echo "idhabitacion ".$row["idHabitacion"];
+            //echo "idhabitacion ".$row["idHabitacion"];
             //echo "fecha_entrada ".$fecha_entrada;
             //echo "fecha_salida ".$fecha_salida;
             if(comprobar_disponibilidad($fecha_entrada,$fecha_salida,$row["idHabitacion"],$dbhandler)){
