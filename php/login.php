@@ -7,7 +7,7 @@
 </div> <!-- end sesion -->
 
 <?php
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_REQUEST['user']) && isset($_REQUEST['pass'])) {
 
 			$user=$_REQUEST['user'];
 			$pass=$_REQUEST['pass'];

@@ -86,15 +86,19 @@ function mostrarFormularioComentario($idAlojameiento,$dbhandler){
     echo "</div> <!-- end comenta -->";
 
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST" ) {
 
-        $sql="insert into comentario(comentarioBueno,comentarioMalo,idAlojamiento) values ('$_REQUEST[mensajeBueno]','$_REQUEST[mensajeMalo]','$idAlojameiento')";
-        if ($dbhandler->query($sql) === TRUE) {
-            echo "<script> alert(\"comentario dado de alta\");</script>";
-        } else {
-            echo "Error: ".$dbhandler->error();
+        if(isset($_SESSION['user'])){
+            $sql="insert into comentario(comentarioBueno,comentarioMalo,idAlojamiento) values ('$_REQUEST[mensajeBueno]','$_REQUEST[mensajeMalo]','$idAlojameiento')";
+            if ($dbhandler->query($sql) === TRUE) {
+                echo "<script> alert(\"comentario dado de alta\");</script>";
+            } else {
+                echo "Error: ".$dbhandler->error();
+            }
         }
-
+        else{
+            echo "<script> alert(\"Para comentar debe resgistrarte\");</script>";
+        }
     }
 }
 ?>
