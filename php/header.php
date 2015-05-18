@@ -8,19 +8,23 @@
     </div> <!-- end logo -->
 	<?php
 		if(isset($_SESSION['user']) ){
-			
+
 			echo '<a href="index.php?salir"><div id = "boton_salir">CERRAR SESION</div></a>';
 
 		}else{
 			include "php/login.php";
 		}
 	?>
+
+
+
     <div class = "busqueda">
         <form class = "barra_sesion">
-            <input type="text" id="texto" size ="18" placeholder="Buscar..." required>
-            <input type="text" id="texto" size ="11" placeholder="Precio">
-            <input type="date" id="texto" size ="13" placeholder="Fecha">
-            <select name="tipo" id="desplegable">
+            <!-- <input type="text" id="texto" size ="18" placeholder="Buscar..." required>-->
+            <input type="text" name="precio" id="texto" size ="11" placeholder="Precio">
+            <input type="date" name="fecha_entrada" id="texto" size ="13" placeholder="Fecha entrada" min="2015-01-01" max="2016-01-01" value="<?php echo date("Y-m-d");?>">
+            <input type="date" name="fecha_salida" id="texto" size ="13" placeholder="Fecha salida" min="2015-01-01" max="2016-01-01" value="<?php echo date("Y-m-d",strtotime("+1 day"));?>">
+            <select name="tipohab" id="desplegable">>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -31,12 +35,12 @@
             <br>
             <div id = "boton_busqueda">
                 <label>
-                    <input type="checkbox" value="hotelcheck"><span>HOTELES</span>
+                    <input type="checkbox" name="hotel"><span>HOTELES</span>
                 </label>
             </div>
             <div id = "boton_busqueda">
                 <label>
-                	<input type="checkbox" value="hotelcheck"><span>CASAS RURALES</span>
+                	<input type="checkbox" name="casa_rural"><span>CASAS RURALES</span>
         		</label>
             </div>
         </form>
@@ -45,23 +49,23 @@
 	<!-- submenu de categorias de hoteles-->
 	<div class = "menu">
     	<?php
-        
+
 			if(!isset($_SESSION['user']) )
 				echo '<a href="index.php?page=registro"><li id="boton_registro">¡REGISTRATE!</li></a>';
-        
-        
-        	
+
+
+
 			if(isset($_SESSION['user']) ){
 				$user=$_SESSION['user'];
-			
+
 				$dbhandler = new db_handler("localhost","root","heisenburg");
 				$tipo="select tipo from `usuarios` where `usuario`='".$user."' and tipo='Hostelero'";
 				$dbhandler->connect();
 				$consulta=$dbhandler->query($tipo);
-				
+
 				if( $consulta->num_rows > 0 )
 					echo '<a href="index.php?page=addhotel"><li id="boton_registro">¡AGREGAR HOTEL!</li></a>';
-	
+
 			}
 		?>
 	</div>
