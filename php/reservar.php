@@ -105,19 +105,18 @@ function get_dni($user,$dbhandler){
 			$precio=get_precio($idHabitacion,$dbhandler);
 			$dni=get_dni($_SESSION['user'],$dbhandler);
 			echo " Usted ha reservado una habitacion de tipo ".$_REQUEST["tipohab"]." con DNI ".$dni." por ".$precio." €";
+			//para reservar necsitmoas:
+			//fecha entrada y salida, coste, dni user,idhabitacion
+			//coste lo cogemos del idhabitaion
+			//dni lo cogemos de user
+
+	        $sql="insert into reserva(fecha_entrada,fecha_salida, precio,dni,idHabitacion) values ('".$_REQUEST["fecha_entrada"]."','".$_REQUEST["fecha_salida"]."','".$precio."','".$dni."','".$idHabitacion."')";
+	        if ($dbhandler->query($sql) === TRUE) {
+	            echo "<script> alert(\"Reserva realizada\");</script>";
+	        } else {
+	            echo "Error: ".$dbhandler->error();
+	        }
 		}
-
-		//para reservar necsitmoas:
-		//fecha entrada y salida, coste, dni user,idhabitacion
-		//coste lo cogemos del idhabitaion
-		//dni lo cogemos de user
-
-        /*$sql="insert into alojamientos(nombre,tipo,precio, direccion, estrellas, telefono, email, video,resumen,resumenCorto,imagen1,imagen2,imagen3,imagen4) values ('$_REQUEST[nombre]','$_REQUEST[tipo]','$_REQUEST[precio]','$_REQUEST[direccion]','$_REQUEST[estrellas]','$_REQUEST[telefono]','$_REQUEST[email]','$_REQUEST[video]','$_REQUEST[resumen]','$_REQUEST[resumenCorto]','$_REQUEST[imagen1]','$_REQUEST[imagen2]','$_REQUEST[imagen3]','$_REQUEST[imagen4]')";
-        if ($dbhandler->query($sql) === TRUE) {
-            echo "<script> alert(\"Hotel dado de alta\");</script>";
-        } else {
-            echo "Error: ".$dbhandler->error();
-        }*/
         $dbhandler->close();
     }
 
