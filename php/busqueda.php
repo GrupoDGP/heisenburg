@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tipo_Alojamiento="hotel";
     }
     else{
-        $tipo_Alojamiento="casa_rural";
+        $tipo_Alojamiento="casa";
     }
     //echo "tipo aloja".$tipo_Alojamiento;
     //echo "precio ".$_REQUEST["precio"];

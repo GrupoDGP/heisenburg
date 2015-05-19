@@ -40,7 +40,7 @@
             </div>
             <div id = "boton_busqueda">
                 <label>
-                	<input type="checkbox" name="casa_rural" value="casa_rural" ><span>CASAS RURALES</span>
+                	<input type="checkbox" name="casa" value="casa" ><span>CASAS RURALES</span>
         		</label>
             </div>
         </form>
