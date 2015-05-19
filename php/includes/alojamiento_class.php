@@ -154,8 +154,8 @@ class Alojamiento{
             $this->mostrarImagenesRotando();
             echo " <div class =\"info_especifica\">";
 				// Boton de reservar
-				echo $this->idAlojamiento;
-				echo '<a href= "index.php?page=reservar&id='.$this->idAlojamiento.'"><div id = "registrate">RESERVAR</div></a>';
+				if( isset( $_SESSION['user']))
+					echo '<a href= "index.php?page=reservar&id='.$this->idAlojamiento.'"><div id = "registrate">RESERVAR</div></a>';
 				// Fin boton reservar
                 echo "<h1 >";
                 	$this->mostrarNombre();

@@ -16,9 +16,10 @@
             <tr>
                 <td><label > Direccion: </label></td>
                 <td><input type="text" name="direccion" placeholder="Introduce direccion habitacion." required="true"> </input></td>
+            	
+                
+            
             </tr>
-			
-            Por añadir mas campos...
             
             <tr>
                 <td><button type="submit" name="submit">Enviar</button></td>
