@@ -153,13 +153,18 @@ class Alojamiento{
         echo "<div class =\"info_especifica_grupo\">";
             $this->mostrarImagenesRotando();
             echo " <div class =\"info_especifica\">";
+				// Boton de reservar
+				echo $this->idAlojamiento;
+				echo '<a href= "index.php?page=reservar&id='.$this->idAlojamiento.'"><div id = "registrate">RESERVAR</div></a>';
+				// Fin boton reservar
                 echo "<h1 >";
                 	$this->mostrarNombre();
                 	for ($i = 0; $i < $this->estrellas ; $i++)
                 		echo "<img src=\"img/star.png\" height=\"20px\" alt=\"estrella\">";
                     echo "</h1>";
+				
                 echo "<p class=\"precio\"> Precio por noche desde ".$this->precio."€ </p>";
-                echo "<p> Telefono: ".$this->telefono."</p>";
+				echo "<p> Telefono: ".$this->telefono."</p>";
 
                 $this->mostrarMapa();
                 $this->mostrarValoracion($dbhandler);

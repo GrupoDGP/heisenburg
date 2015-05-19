@@ -468,11 +468,6 @@ header{
 	border-radius : 15px;
 }
 
-.videos{
-	
-	text-align:center;
-}
-
 .comenta{
 	margin-left : 10px;
 	margin-right : 10px;
@@ -583,6 +578,26 @@ td#submit{
 }
 
 #boton_salir:hover{
+	
+	background-color: #31b2c3;
+	
+}
+
+#registrate{
+	
+	float: right;
+	width: 150px;
+	height: 32px;
+	text-align: center;
+	cursor: pointer;
+	background-color: #0483a0;
+	color: #fafafa;
+	border-radius: 4px;
+	margin-top: 40px;
+	margin-right: 15px;
+	padding-top: 15px;
+}
+#registrate:hover{
 	
 	background-color: #31b2c3;
 	

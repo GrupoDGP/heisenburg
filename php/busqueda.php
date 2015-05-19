@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //echo "tipo hab".$_REQUEST["fecha_entrada"];
     //echo "tipo hab".$_REQUEST["fecha_salida"];
 
-    $alojamientos=buscar_alojamientos($_REQUEST[precio],$_REQUEST[tipohab],$tipo_Alojamiento,$dbhandler,$_REQUEST["fecha_entrada"],$_REQUEST["fecha_salida"]);
+    $alojamientos=buscar_alojamientos($_REQUEST["precio"],$_REQUEST["tipohab"],$tipo_Alojamiento,$dbhandler,$_REQUEST["fecha_entrada"],$_REQUEST["fecha_salida"]);
     $size=count($alojamientos);
     for($i = 0; $i<$size; $i++) {
         if($i%2==0){
