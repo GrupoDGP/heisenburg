@@ -164,12 +164,6 @@ class Alojamiento{
         echo "</div> <!-- end resumen-->";
         $this->mostrarServicios();
         echo "</div> <!-- end info_generañ -->";
-		
-		echo "<div class =\"videos\">";
-			echo "<iframe width=\"420\" height=\"315\" 
-				src=\"" . $this->video . "\" frameborder=\"0\" allowfullscreen>";
-			echo "</iframe>";
-		echo "</div> <!-- end video-->";
     }
 
 }
