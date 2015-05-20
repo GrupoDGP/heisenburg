@@ -12,7 +12,6 @@ class db_handler{
         $this->username=$usernameaux;
         $this->pass="";
         $this->dbname=$dbnameaux;
-
     }
     public function connect(){
         $this->connection=new mysqli($this->servername,$this->username,$this->pass,$this->dbname);
