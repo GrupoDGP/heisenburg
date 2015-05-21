@@ -291,10 +291,10 @@ header{
 }
 
 #imagen_footer{
-	
+
 	width: 100px;
 	float: left;
-	
+
 }
 
 #boton_contactanos{
@@ -311,13 +311,13 @@ header{
 	padding-top: 15px;
 	float: right;
 	font-family: plane;
-	
+
 }
 
 #boton_contactanos:hover{
-	
+
 	background-color: #31b2c3;
-	
+
 }
 
 #footer_Inferior{
@@ -545,7 +545,7 @@ header{
 }
 
 #boton_registro{
-	
+
 	font-size:14px;
 	background-color: #0483a0;
 	color: white;
@@ -589,7 +589,7 @@ td#submit{
 }
 
 #boton_salir{
-	
+
 	border: 1px solid black;
 	float: right;
 	width: 300px;
@@ -604,17 +604,17 @@ td#submit{
 	margin-top: 11px;
 	cursor: pointer;
 	color: #fafafa;
-	
+
 }
 
 #boton_salir:hover{
-	
+
 	background-color: #31b2c3;
-	
+
 }
 
 #registrate{
-	
+
 	float: right;
 	width: 150px;
 	height: 32px;
@@ -628,13 +628,13 @@ td#submit{
 	padding-top: 15px;
 }
 #registrate:hover{
-	
+
 	background-color: #31b2c3;
-	
+
 }
 
 .videos{
-	
+
 	COLOR:#C9C3C3;
 	font: 20px plane;
 	background-color: #4A6263;
@@ -643,5 +643,15 @@ td#submit{
 	width: 918px;
 	text-align: center;
 	border-radius: 4px;
-	
+
+}
+
+/*contacto*/
+.contacta{
+	margin-top:10px;
+	padding: 0px 20px 0px 20px;
+	background : #CDDBF0;
+	border-radius : 15px;
+	padding-bottom:10px;
+	margin-botoom:10px;
 }
