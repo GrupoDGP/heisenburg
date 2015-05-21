@@ -118,7 +118,7 @@ class Alojamiento{
     }
 
     private function mostrarServicios(){
-
+		
         echo "<div class =\"servicios\">";
             echo "<h5 > Servicios</h5>";
 
