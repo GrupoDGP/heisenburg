@@ -1,7 +1,12 @@
 <footer>
     <div>
         <div id="footer_Superior_Derecho">
-            <img src="./img/logo_etsiit.png"/>
+        	<div id = "imagen_footer">
+            	<img width = "220px" src="./img/logo_etsiit.png"/>
+            </div>
+            <a href = "index.php?page=contacto"><div id = "boton_contactanos">
+            	CONTACTANOS
+        	</div></a>
         </div>
 
         <div id="footer_Superior_Izquierdo">

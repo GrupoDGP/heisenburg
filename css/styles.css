@@ -172,7 +172,7 @@ footer{
 	width:1002px;
 	margin: 0 auto;
 	color: #FFFFFF;
-	background-color:#000000;
+	background-image: url(../img/foot_back.jpg);
 
 }
 
@@ -288,6 +288,36 @@ header{
 	width: 400px;
 	height: 100px;
 	float:right;
+}
+
+#imagen_footer{
+	
+	width: 100px;
+	float: left;
+	
+}
+
+#boton_contactanos{
+	float: right;
+	width: 150px;
+	height: 32px;
+	text-align: center;
+	cursor: pointer;
+	background-color: #0483a0;
+	color: #fafafa;
+	border-radius: 4px;
+	margin-top: 10px;
+	margin-right: 15px;
+	padding-top: 15px;
+	float: right;
+	font-family: plane;
+	
+}
+
+#boton_contactanos:hover{
+	
+	background-color: #31b2c3;
+	
 }
 
 #footer_Inferior{
@@ -534,7 +564,7 @@ header{
 	border-radius : 15px;
     padding-top:10px;
 	padding-bottom: 10px;
-	width: 600px;
+	width: 800px;
 	margin: 0 auto;
 	margin-bottom: 2px;
 
@@ -600,5 +630,18 @@ td#submit{
 #registrate:hover{
 	
 	background-color: #31b2c3;
+	
+}
+
+.videos{
+	
+	COLOR:#C9C3C3;
+	font: 20px plane;
+	background-color: #4A6263;
+	margin-left: 42px;
+	height: 420px;
+	width: 918px;
+	text-align: center;
+	border-radius: 4px;
 	
 }

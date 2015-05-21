@@ -120,7 +120,7 @@ class Alojamiento{
     private function mostrarServicios(){
 
         echo "<div class =\"servicios\">";
-            echo "<h5 > Servios</h5>";
+            echo "<h5 > Servicios</h5>";
 
                 echo " <ul class=\"iconos-servicios \">";
                     echo "<li><img src=\"http://cdrst.com/adjuntos/filtros/parking.png\" height=\"30px\" width=\"30px\" alt=\"Parking\" title=\"Parking\">";
@@ -181,6 +181,7 @@ class Alojamiento{
         echo "</div> <!-- end info_generañ -->";
 
 		echo "<div class =\"videos\">";
+			echo "<br>VIDEO INFORMATIVO<BR><br><br>";
 			echo "<iframe width=\"420\" height=\"315\"
 				src=\"" . $this->video . "\" frameborder=\"0\" allowfullscreen>";
 			echo "</iframe>";
