@@ -118,7 +118,7 @@ class Alojamiento{
     }
 
     private function mostrarServicios(){
-		
+
         echo "<div class =\"servicios\">";
             echo "<h5 > Servicios</h5>";
 
@@ -162,7 +162,7 @@ class Alojamiento{
                 	for ($i = 0; $i < $this->estrellas ; $i++)
                 		echo "<img src=\"img/star.png\" height=\"20px\" alt=\"estrella\">";
                     echo "</h1>";
-				
+
                 echo "<p class=\"precio\"> Precio por noche desde ".$this->precio."€ </p>";
 				echo "<p> Telefono: ".$this->telefono."</p>";
 
@@ -252,5 +252,18 @@ function buscar_alojamientos($precio,$tipo_hab,$tipo_Alojamiento,$dbhandler,$fec
         echo "no results";
     }
     return $result;
+}
+
+
+
+//funcion que devuvel un array de alojamiento para la api rest
+function buscar_alojamientos_api_rest($tipo,$fecha_inicio,$fecha_fin){
+    require "php/includes/dbhandler.php";
+    $dbhandler = new db_handler("localhost","root","heisenburg");
+    $dbhandler->connect();
+    $hoteles=buscar_alojamientos(500,$tipo,"hotel",$dbhandler,$fecha_inicio,$fecha_fin);
+    $dbhandler->close();
+    return $hoteles;
+
 }
 ?>
