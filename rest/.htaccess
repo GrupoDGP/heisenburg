@@ -2,5 +2,6 @@
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^(.*)\/(.*)\/(.*)\/(.*)$ api.php?rquest=$1&tipo=$2&finicio=$3&ffin=$4 [QSA,NC,L]
+RewriteRule ^hotel\/(.*)\/(.*)\/(.*)$ api.php?rquest=hotel&tipo=$1&finicio=$2&ffin=$3 [QSA,NC,L]
+RewriteRule ^reserva\/(.*)\/(.*)\/(.*)\/(.*)\/(.*)$ api.php?rquest=reserva&tipo=$1&finicio=$2&ffin=$3&username=$4&hotel=$5
 </IfModule>
