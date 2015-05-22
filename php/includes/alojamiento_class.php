@@ -1,6 +1,5 @@
 <?php
 //Clase Alojamiento
-
 class Alojamiento{
     private $idAlojamiento;
     private $nombre;
@@ -257,10 +256,9 @@ function buscar_alojamientos($precio,$tipo_hab,$tipo_Alojamiento,$dbhandler,$fec
 }
 
 
-
 //funcion que devuvel un array de alojamiento para la api rest
-function buscar_alojamientos_api_rest($tipo,$fecha_inicio,$fecha_fin){
-    require "php/includes/dbhandler.php";
+function buscar_alojamientos_api_rest($tipo,$fecha_inicio,$fecha_fin){  
+     require "../php/includes/dbhandler.php";
     $dbhandler = new db_handler("localhost","root","heisenburg");
     $dbhandler->connect();
     $hoteles=buscar_alojamientos(500,$tipo,"hotel",$dbhandler,$fecha_inicio,$fecha_fin);
