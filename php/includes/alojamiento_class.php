@@ -1,21 +1,21 @@
 <?php
 //Clase Alojamiento
 class Alojamiento{
-    private $idAlojamiento;
-    private $nombre;
-    private $tipo; //string hotel o casa rural
-    private $precio;
-    private $direccion;
-    private $estrellas; //0-5
-    private $telefono;
-    private $email;
-    private $video;
-    private $resumen;
-    private $resumenCorto;
-    private $imagen1;
-    private $imagen2;
-    private $imagen3;
-    private $imagen4;
+    public $idAlojamiento;
+    public $nombre;
+    public $tipo; //string hotel o casa rural
+    public $precio;
+    public $direccion;
+    public $estrellas; //0-5
+    public $telefono;
+    public $email;
+    public $video;
+    public $resumen;
+    public $resumenCorto;
+    public $imagen1;
+    public $imagen2;
+    public $imagen3;
+    public $imagen4;
 
     //se le pasa una "row" del query
     public function read_hotel($row){
@@ -257,16 +257,17 @@ function buscar_alojamientos($precio,$tipo_hab,$tipo_Alojamiento,$dbhandler,$fec
 
 
 //funcion que devuvel un array de alojamiento para la api rest
-function buscar_alojamientos_api_rest($tipo,$fecha_inicio,$fecha_fin){  
+function buscar_alojamientos_api_rest($tipo,$fecha_inicio,$fecha_fin){
      require "../php/includes/dbhandler.php";
     $dbhandler = new db_handler("localhost","root","heisenburg");
     $dbhandler->connect();
     $hoteles=buscar_alojamientos(500,$tipo,"hotel",$dbhandler,$fecha_inicio,$fecha_fin);
+
     $dbhandler->close();
     return $hoteles;
 
 }
-/*
+
 //devuelve el dni de un usuario con si nombre usuaro
 function get_dni($user,$dbhandler){
 	$query="SELECT dni FROM usuarios WHERE usuario='".$user."'";
@@ -278,22 +279,74 @@ function get_dni($user,$dbhandler){
 	return 0;
 }
 
+
+//devuevle true si la habitacion con id esta libre entre fecha llegada y salida
+function comprobar_disponibilidad_api_rest($fecha_entrada,$fecha_salida,$idHabitacion,$dbhandler){
+	//compruba si dicha habiatacion esta reservada actualmente
+	$disponible= true;
+	$query="SELECT * from reserva where idHabitacion=".$idHabitacion." AND ( (fecha_entrada<='".$fecha_entrada."' AND fecha_salida>='".$fecha_entrada."' ) OR (fecha_entrada>='".$fecha_entrada."' AND fecha_salida>='".$fecha_salida."' AND fecha_entrada<='".$fecha_salida."')                                        OR (fecha_entrada<='".$fecha_entrada."' AND fecha_salida<='".$fecha_salida."' AND fecha_salida>='".$fecha_entrada."')                                    )";
+	$table=$dbhandler->query($query);
+	if ($table->num_rows > 0) {
+		$disponible= false;//no esta disponible
+	}
+	return $disponible;
+}
+//devuelve la ide de la habitacion que este disponible
+//Devuelve -1 si no hay habitaciones
+function comprobar_habitaciones_api_rest($fecha_entrada,$fecha_salida,$tipo_hab,$idAlojamiento,$dbhandler){
+	$query="SELECT habitacion.idHabitacion FROM alojamientos, habitacion WHERE habitacion.idAlojamiento=alojamientos.idAlojamiento AND habitacion.tipo_hab=".$tipo_hab." AND alojamientos.idAlojamiento='".$idAlojamiento."'";
+
+	$table=$dbhandler->query($query);
+	if ($table->num_rows > 0) {
+		// output data of each row
+		while($row = $table->fetch_assoc()) {
+			if(comprobar_disponibilidad_api_rest($fecha_entrada,$fecha_salida,$row["idHabitacion"],$dbhandler)){
+				return $row["idHabitacion"];//si esta disponible la mostramos
+			}
+		}
+	}
+	return -1;
+}
+
+//devuelve el precio de la habitacion con id
+function get_precio($idHabitacion,$dbhandler){
+	$query="SELECT precio FROM habitacion WHERE idHabitacion='".$idHabitacion."'";
+	$table=$dbhandler->query($query);
+	if ($table->num_rows > 0) {
+		$row = $table->fetch_assoc();
+		return $row["precio"];//si esta disponible la mostramos
+	}
+	return 0;
+}
+
+
 //funcion que realiza la reserva a partir de la api rest
 function reserva_api_rest($tipo,$fecha_inicio,$fecha_fin,$user,$hotel){
-    require "php/includes/dbhandler.php";
+    require "../php/includes/dbhandler.php";
     $dbhandler = new db_handler("localhost","root","heisenburg");
     $dbhandler->connect();
     $dni=get_dni($user,$dbhandler);
-    if($din!=0){
+    if($dni!=0){
 
+        $disponibilidad=comprobar_habitaciones_api_rest($fecha_inicio,$fecha_fin,$tipo,$hotel,$dbhandler);
 
-
+		if($disponibilidad==-1){//no esta disponible si $disponibilidd =-1
+            return false;
+		}else{//si esta disponible si $disponibilidd !=-1 y la idHAbitacion=$disponibilidd
+			$idHabitacion=$disponibilidad;
+			$precio=get_precio($idHabitacion,$dbhandler);
+			$dni=get_dni($user,$dbhandler);
+			$consultado = true;
+			$sql="insert into reserva(fecha_entrada,fecha_salida, precio,dni,idHabitacion) values ('".$fecha_inicio."','".$fecha_fin."','".$precio."','".$dni."','".$idHabitacion."')";
+	        if ($dbhandler->query($sql) === false) {
+                return false;
+	        }
     }else{
         return false;
     }
     $dbhandler->close();
     return true;
 
-}*/
+}
 
 ?>
