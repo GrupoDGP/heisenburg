@@ -1,7 +1,6 @@
 <?php
 class api_rest{
 public function process_api(){	
-		echo $_REQUEST['rquest'];
 		$func = strtolower(trim(str_replace("/","",$_REQUEST['rquest'])));
 			if((int)method_exists($this,$func) > 0){
 				$this->$func();
@@ -34,7 +33,7 @@ public function process_api(){
 			http_response_code(406);
 		}
 		else{
-			if(!isset($_REQUEST['hotel']) || !isset($_REQUEST['tipo']) || !isset($_REQUEST['dni']) || !isset($_REQUEST['finicio']) || !isset($_REQUEST['ffin'])){
+			if(!isset($_REQUEST['hotel']) || !isset($_REQUEST['tipo']) || !isset($_REQUEST['username']) || !isset($_REQUEST['finicio']) || !isset($_REQUEST['ffin'])){
 			http_response_code(204);
 		}
 		else {
@@ -42,8 +41,8 @@ public function process_api(){
 				$fechainicio = strtolower(trim(str_replace("/","",$_REQUEST['finicio'])));
 				$fechafin = strtolower(trim(str_replace("/","",$_REQUEST['ffin'])));
 				$hotel=strtolower(trim(str_replace("/","",$_REQUEST['hotel'])));
-				$dni=strtolower(trim(str_replace("/","",$_REQUEST['dni'])));
-				$response=$this->reserva_habitacion($tipo,$fechainicio,$fechafin,$dni,$hotel);
+				$username=strtolower(trim(str_replace("/","",$_REQUEST['username'])));
+				$response=$this->reserva_habitacion($tipo,$fechainicio,$fechafin,$username,$hotel);
 				if($response==true) http_response_code(200);
 				else http_response_code(204);
 		}
@@ -59,7 +58,7 @@ public function process_api(){
 	//MODIFICAR RESPONSE!!
 	return $response;
 	}
-	private function reserva_habitacion($tipo,$fecha_inicio,$fecha_fin,$dni,$hotel){
+	private function reserva_habitacion($tipo,$fecha_inicio,$fecha_fin,$usename,$hotel){
 	//reserva habitacion
 	return true; //return false si falla
 	}
