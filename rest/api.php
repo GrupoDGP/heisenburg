@@ -54,8 +54,9 @@ public function process_api(){
 
 	private function get_hoteles($tipo,$fecha_inicio,$fecha_fin){
 	//peticion de hoteles con tipo y dos fechas
-	$response= array("tipo" => $tipo, "fechainicio"=> $fecha_inicio, "fechafin"=>$fecha_fin);
-	//MODIFICAR RESPONSE!!
+	//$response= array("tipo" => $tipo, "fechainicio"=> $fecha_inicio, "fechafin"=>$fecha_fin);
+	include "../php/includes/alojamiento_class.php";
+	$response=buscar_alojamientos_api_rest($tipo,$fecha_inicio,$fecha_fin);
 	return $response;
 	}
 	private function reserva_habitacion($tipo,$fecha_inicio,$fecha_fin,$usename,$hotel){
