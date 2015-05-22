@@ -189,6 +189,8 @@ class Alojamiento{
     }
 
 }
+
+
 //devuelve todas los alojameintos en un array dada una query
 function leer_alojamientos($query,$dbhandler){
     $table=$dbhandler->query($query);
@@ -266,4 +268,34 @@ function buscar_alojamientos_api_rest($tipo,$fecha_inicio,$fecha_fin){
     return $hoteles;
 
 }
+/*
+//devuelve el dni de un usuario con si nombre usuaro
+function get_dni($user,$dbhandler){
+	$query="SELECT dni FROM usuarios WHERE usuario='".$user."'";
+	$table=$dbhandler->query($query);
+	if ($table->num_rows > 0) {
+		$row = $table->fetch_assoc();
+		return $row["dni"];//si esta disponible la mostramos
+	}
+	return 0;
+}
+
+//funcion que realiza la reserva a partir de la api rest
+function reserva_api_rest($tipo,$fecha_inicio,$fecha_fin,$user,$hotel){
+    require "php/includes/dbhandler.php";
+    $dbhandler = new db_handler("localhost","root","heisenburg");
+    $dbhandler->connect();
+    $dni=get_dni($user,$dbhandler);
+    if($din!=0){
+
+
+
+    }else{
+        return false;
+    }
+    $dbhandler->close();
+    return true;
+
+}*/
+
 ?>

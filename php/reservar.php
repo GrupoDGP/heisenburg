@@ -3,10 +3,10 @@
 <?php echo "<h3>Usted, ".$_SESSION['user']." va a reservar: "; ?>
 
 <?php
-	
+
 	if( $consultado == null )
 		$consultado = false;
-		
+
 	if(isset($_GET['id'])){
 		$dbhandler = new db_handler("localhost","root","heisenburg");
 		$dbhandler->connect();
@@ -39,9 +39,9 @@
 			</form>';
 			echo "</div> <!-- end busqueda -->";
 		}else{
-			
+
 			echo 'Reserva realizada ^^!';
-			
+
 		}
 	?>
 <?php
@@ -59,6 +59,7 @@ function comprobar_disponibilidad($fecha_entrada,$fecha_salida,$idHabitacion,$db
 	return $disponible;
 }
 //devuelve la ide de la habitacion que este disponible
+//Devuelve -1 si no hay habitaciones
 function comprobar_habitaciones($fecha_entrada,$fecha_salida,$tipo_hab,$idAlojamiento,$dbhandler){
 	$query="SELECT habitacion.idHabitacion FROM alojamientos, habitacion WHERE habitacion.idAlojamiento=alojamientos.idAlojamiento AND habitacion.tipo_hab=".$tipo_hab." AND alojamientos.idAlojamiento='".$idAlojamiento."'";
 
@@ -125,7 +126,7 @@ function get_dni($user,$dbhandler){
 	        $sql="insert into reserva(fecha_entrada,fecha_salida, precio,dni,idHabitacion) values ('".$_REQUEST["fecha_entrada"]."','".$_REQUEST["fecha_salida"]."','".$precio."','".$dni."','".$idHabitacion."')";
 	        if ($dbhandler->query($sql) === TRUE) {
 	            echo "<script> alert(\"Reserva realizada\");</script>";
-				
+
 	        } else {
 	            echo "Error: ".$dbhandler->error();
 	        }
