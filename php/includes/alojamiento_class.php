@@ -341,6 +341,7 @@ function reserva_api_rest($tipo,$fecha_inicio,$fecha_fin,$user,$hotel){
 	        if ($dbhandler->query($sql) === false) {
                 return false;
 	        }
+    }
     }else{
         return false;
     }
@@ -348,5 +349,7 @@ function reserva_api_rest($tipo,$fecha_inicio,$fecha_fin,$user,$hotel){
     return true;
 
 }
+
+
 
 ?>
