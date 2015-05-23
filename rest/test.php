@@ -1,9 +1,9 @@
 <?php
 //ONLY FOR TESTING
 echo "test</br>";
-//$service_url = "http://localhost/heisenburg/rest/hotel/2/2015-05-17/2015-05-23";//funcion de buscar alojameintos
+$service_url = "http://localhost/heisenburg/rest/hotel/2/2015-05-17/2015-05-23";//funcion de buscar alojameintos
 
-$service_url = "http://localhost/heisenburg/rest/reserva/2/2015-05-17/2015-05-23/antonio/5";//funcion de reservar alojameinto
+//$service_url = "http://localhost/heisenburg/rest/reserva/2/2015-05-17/2015-05-23/antonio/5";//funcion de reservar alojameinto
 
 //$service_url = "http://localhost/heisenburg/rest/api.php?rquest=hotel&tipo=5&finicio=24/1/2011&ffin=12/7/2011";
 //$service_url="http://localhost/heisenburg/rest/api.php?rquest=reserva&tipo=5&finicio=24/1/2011&ffin=12/7/2011&dni=7777&hotel=peepe";
@@ -24,5 +24,5 @@ echo "Header:" . $httpcode . "</br>";
 //echo $decoded["fechainicio"] . "</br>";
 //echo $decoded["fechafin"] . "</br>";
 echo $result;
-echo "end test";
+echo "</br>end test";
 ?>

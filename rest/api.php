@@ -43,7 +43,10 @@ public function process_api(){
 				$hotel=strtolower(trim(str_replace("/","",$_REQUEST['hotel'])));
 				$username=strtolower(trim(str_replace("/","",$_REQUEST['username'])));
 				$response=$this->reserva_habitacion($tipo,$fechainicio,$fechafin,$username,$hotel);
-				if($response==true) http_response_code(200);
+				if($response==true){
+					http_response_code(200);
+					echo json_encode($response);
+				}
 				else http_response_code(204);
 		}
 
