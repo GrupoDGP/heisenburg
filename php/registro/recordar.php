@@ -51,11 +51,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"  && isset($_REQUEST['nombre']) && isset
 
 
             if(!$mail->send()) {
-            	//echo "<script type='text/javascript'>alert('Message could not be sent');</script>";
+            	/*echo "<script type='text/javascript'>alert('Message could not be sent');</script>";*/
                 echo 'Contraseña no se ha podido enviar';
                 echo 'Mailer Error: ' . $mail->ErrorInfo;
             } else {
-            	//echo "<script type='text/javascript'>alert('Message has been sent');</script>";
+            	/*echo "<script type='text/javascript'>alert('Message has been sent');</script>";*/
                 echo 'Contraseña enviada a su correo';
             }
 

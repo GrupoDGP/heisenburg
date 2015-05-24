@@ -663,6 +663,14 @@ td#submit{
 	height: 100px;
 	text-align: center;
 	margin-top:22px;
+	
+}
+
+.menu_ponencias a{
+	
+	color: black;
+	text-decoration: none;
+	
 }
 
 .menu_ponencias li{
@@ -672,5 +680,6 @@ td#submit{
  	background: -moz-linear-gradient(rgb(249, 160, 0),rgb(152, 97, 12)); /* For Firefox 3.6 to 15 */
   	background: linear-gradient(rgb(249, 160, 0), rgb(152, 97, 12));/* Standard syntax */
 	padding: 9px;
+	
 
 }
